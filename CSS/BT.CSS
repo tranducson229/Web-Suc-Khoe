@@ -1,0 +1,201 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.head
+{
+    color: red;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1.5cm;
+}
+
+
+.head1
+{
+    margin-top: 0.5cm;
+    text-align: center;
+    margin-left: 2.5cm;
+}
+
+.trai
+{
+    float: left;
+}
+.phai
+{
+    float: right;
+    
+}
+
+#maunenbg1
+{
+    margin-top: 0cm;
+    background-color: rgba(0, 140, 255, 0.521);
+    float:none;
+ 
+    height: 8cm;
+
+}
+
+.timkiem
+{
+    float:right;
+    padding-right: 1.8cm;
+}
+
+.tim
+{
+    justify-content: center;
+    float:right;
+}
+
+#maunenbg2
+{
+    background-color:darksalmon;
+    height: 9.5cm;
+    
+
+}
+
+ul#main-menu
+{
+    display: flex;
+    justify-content: space-around;
+}
+
+ul#main-menu li
+{
+    list-style: none;
+    margin-top: 0.5cm
+}
+
+ul#main-menu a
+{
+        display: block;
+        padding: 15px 0px;
+        text-transform: uppercase;
+        font-weight: bold;
+        text-decoration:none;
+        color:#333;
+        position: relative;
+}
+
+ul#main-menu a::after
+{
+    content:"";
+    height: 5px;
+    width: 0px;
+    background: tomato;
+    position: absolute;
+    bottom: 0px;
+    left:0
+    
+}
+
+ul#main-menu a:hover::after{
+    width: 50%;
+    transform: translateX(100%);
+    transition: all 0.5s ease-in-out;
+   }
+ul#main-picture
+{
+    display: flex;
+}
+
+ul#main-picture li
+{
+    list-style: none;
+    margin: 2cm;
+    width:100px;
+    height: 100px;
+    list-style: none;
+    
+}
+
+ul#main-picture a
+{
+    text-decoration: none;
+
+}
+ul#main-picture img 
+{
+    list-style: none;
+    display: flex;
+}
+#rate{
+    padding-left: 5cm;
+}
+#class
+{
+    padding-left: 0.5cm;
+    
+}
+#in4
+{
+    padding-left: 6.6cm;
+}
+#multi
+{
+   padding-left: 6cm;
+}
+#maunenbg3
+{
+    background-color: rgba(146, 91, 197, 0.877);
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 11cm;
+   line-height: 1cm;
+   
+}
+#pic
+{
+    float: left;
+    
+}
+#maunenbg4
+{
+    background-color:rgba(153, 93, 209, 0.842);
+    margin-top: 5cm;
+    height: 4cm;
+    font-style: italic;
+    font-weight: normal;
+    text-align: center;
+    position: relative;
+    padding-top: 2.5cm;
+}
+#nenform
+{
+    background-color: pink;
+    text-align: center;
+    text-transform: uppercase;
+}
+.font
+{
+    color: red;
+    text-transform: none;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+.font1
+{
+    text-transform: none;
+    font-style: italic;
+    font-family: serif;
+}
+.bang
+{
+    background-color: rgb(88, 155, 231);
+    text-transform: none;
+    font-weight: normal;
+   padding-left: 17cm;
+   
+}
+.word
+{
+    font-style: italic;
+    text-align: justify
+}
+
+
+
+

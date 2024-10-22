@@ -1,0 +1,160 @@
+/* *{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    
+} */
+#wrapper{
+    position: fixed;
+    top:0;
+    left:0;
+    right: 0;
+   
+}
+.header{
+    background-color:#fff;  
+    
+}
+.container{
+    max-width: 1500px;
+    margin: 0 auto;
+    
+}
+nav{
+    display: flex;
+    justify-items: center;
+    justify-content:space-between;
+   
+}
+#main-menu{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    
+    
+}
+#main-menu li{
+    position: relative;
+}
+#main-menu li a{
+    color:#333;
+    display: block;
+    text-decoration: none;
+    padding: 18px 20px;
+}
+#main-menu ul.sub-menu{
+    position: absolute;
+    background: #ffffffab;
+    padding: 15px 0px;
+    list-style: none;
+    width: 200px;
+    border:1px solid #333;
+    display: none;
+}
+#main-menu li:hover>ul.sub-menu{
+    display: block;
+}
+#main-menu ul.sub-menu a{
+    padding: 8px 15px;
+    border-bottom: 1px solid #8d8a8a;
+    left:0;
+}
+#main-menu ul.sub-menu li a{
+    color:#333;
+   
+}
+#main-menu ul.sub-menu li:hover>a{
+    border-bottom: 1px solid #474746;
+    box-shadow: rgba(148, 241, 120, 0.4) -5px 5px, rgba(148, 184, 66, 0.3) -10px 10px, rgba(89, 240, 30, 0.2) -15px 15px, rgba(49, 180, 89, 0.1) -20px 20px, rgba(62, 126, 26, 0.05) -25px 25px;       border-radius: 10px;
+}
+#main-menu ul.sub-menu li:last-child a{
+    border-bottom:none;
+}
+#main-menu>li>a{
+    position: relative;
+}
+#main-menu>li>a::before{
+    content: "";
+    height: 4px;
+    width: 0px;
+    background: rgb(81, 233, 64);
+    position: absolute;
+    bottom: 0px;
+    transition: 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+#main-menu>li:hover>a::before{
+    width: 100%;
+    left: 0px;
+}
+#main-menu>li.has-child::after{
+font-family:"Font Awesome 5 Free"; 
+font-weight:600; 
+content:"\f107";
+color: #333;
+position: absolute;
+top:0px;
+right: 0px;
+padding: 18px 0px;
+}
+/* #main-menu .sub-menu li:hover>a{
+color:rgb(255, 255, 255);
+
+} */
+#main-menu .sub-menu>li.has-child::after{
+font-family:"Font Awesome 5 Free";
+font-weight:600; 
+content:"\f105";
+color: #333;
+position: absolute;
+top:0px;
+right: 10px;
+padding: 8px 0px;
+}
+#main-menu .sub-menu>li.has-child :hover::after{ /*tác động vào thẻ li có lớp là has-child và tác động vào thẻ after của li.has-child*/ 
+color:rgba(255, 255, 255, 0.61);
+}
+/* Code Menu */
+.nav{
+    padding-top: 100px;
+    margin-left: 2%;
+}
+.header-khamtuxa{
+    display: grid;
+    grid-template-columns: repeat(12,minmax(0px,1fr));
+    grid-template-areas: "text text text text text text text text text form form form"
+                        "text-1 text-1 text-1 text-1 text-1 text-1 text-1 text-1 text-1 form-1 form-1 form-1";
+}
+.item_1{
+    grid-area: text;
+   line-height: 40px;
+}
+.title h1{
+    padding-top: 10px;
+    font-size: 50px;
+}
+.header-khamtuxa .subtitle p {
+    color:#8d8a8a;
+    font-size: 25px;
+    
+}
+.item_2{
+    grid-area: form;
+    grid-column: 10/12;
+    margin-left: 20px;
+}
+.item_2 .wrapper{
+    line-height: 50px;
+    max-height: 550px;
+    max-width: 550px;
+    background-color: rgb(66, 207, 207);
+}
+.button{
+    display: flex;
+    justify-content: right;
+}
+.item_3{
+    grid-area: text-1;
+}
+

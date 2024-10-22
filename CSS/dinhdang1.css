@@ -1,0 +1,88 @@
+body {
+    font-family: sans-serif;
+    background-size: cover;
+    background-image: url(/media/vector-cartoon-music-icon-in-comic-style-sound-note-sign-illustration-pictogram-melody-music-business-splash-effect-concept-PE2FM5.jpg);
+    margin: 0;
+    padding: 0;
+}
+*{
+    box-sizing:border-box ;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing:border-box ;
+}
+.box-menu{
+    background-color:rgb(241, 8, 8);
+    text-align: center;
+}
+.box-menu ul{
+    display: inline-flex ;
+    list-style: none;
+    color: white;
+}
+.box-menu ul li{
+    width: 125px;
+    margin: 5px;
+    padding: 15px;
+}
+.box-menu ul li a{
+    color: white;
+    text-decoration: none;
+}
+.active .box-menu ul li:hover{
+    background: red ;
+    border-radius: 3px; 
+}
+.box-menu .fa{
+    margin-right: none ;
+}
+.box-submenu{
+    display: none;
+}
+.box-menu ul li:hover .box-submenu{
+    display: block;
+    position: absolute;
+    background:red;
+    margin-top:  15px;
+    margin-left: -15px;
+}
+.box-menu ul li:hover .box-submenu ul{
+    display: block;
+    margin:0px ;
+    padding: 0px;
+}
+.box-menu ul li:hover .box-submenu ul li{
+    width: 220px;
+    text-align: left;
+    border-bottom: dotted 1px #fff;
+    background: transparent;
+    border-radius: 0;
+    padding: 15px;
+    margin: 10px;
+}
+.box-menu ul li:hover .box-submenu ul li:last-child{
+   border-bottom: none;
+}
+.box-menu ul li:hover .box-submenu ul li a:hover{
+   color: rgb(62, 8, 8);
+}
+.box-submenu-2{
+    display: none;
+}
+.submenu-hover:hover .box-submenu-2{
+    display: block;
+    position: absolute;
+    margin-top: -40px;
+    margin-left: 130px;
+    background:yellowgreen;}
+.kieu1{
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: red;
+    font-size: 20pt;
+    line-height: 3cm;
+}
+.video{
+    background-position: 5cm;
+}

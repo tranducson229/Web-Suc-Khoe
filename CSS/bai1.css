@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#wrapper {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.header {
+    background-color: #fff;
+}
+
+.container {
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#main-menu {
+    display: flex;
+    list-style: none;
+    font-size: 20px;
+}
+
+#main-menu li {
+    position: relative;
+}
+
+#main-menu li a {
+    color: #333;
+    text-decoration: none;
+    padding: 18px 20px;
+    display: block;
+}
+
+#main-menu ul.sub-menu {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.67);
+    list-style: none;
+    padding: 15px 0;
+    width: 200px;
+    border: 1px solid #333;
+    display: none;
+}
+
+#main-menu li:hover > ul.sub-menu {
+    display: block;
+}
+
+#main-menu ul.sub-menu li a {
+    padding: 8px 15px;
+    color: #333;
+    border-bottom: 1px solid #8d8a8a;
+}
+
+#main-menu ul.sub-menu li:hover > a {
+    border-bottom: 1px solid #474746;
+    box-shadow: rgba(148, 241, 120, 0.4) -5px 5px, rgba(148, 184, 66, 0.3) -10px 10px;
+    border-radius: 10px;
+}
+
+#main-menu ul.sub-menu li:last-child a {
+    border-bottom: none;
+}
+
+#main-menu > li > a::before {
+    content: "";
+    height: 4px;
+    width: 0;
+    background: rgb(81, 233, 64);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+#main-menu > li:hover > a::before {
+    width: 100%;
+}
+
+#main-menu > li.has-child::after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 600;
+    content: "\f107";
+    color: #333;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 18px 0;
+}
+
+#main-menu .sub-menu > li.has-child::after {
+    content: "\f105";
+    position: absolute;
+    top: 0;
+    right: 10px;
+    padding: 8px 0;
+}
+
+#main-menu .sub-menu > li:hover::after {
+    color: rgba(255, 255, 255, 0.61);
+}
+
+.chu1 {
+    padding-top:150px ;
+    margin: 20px;
+    text-align: center;
+    font-size: 60px;
+    font-weight: bold;
+    color: #333;
+}
+
+.chu2 {
+    padding: 20px;
+    text-align: center;
+    color: #4b4848;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.responsive-image {
+    width: 100%; /* Đảm bảo ảnh chiếm toàn bộ chiều rộng container */
+    height: auto; /* Tự động điều chỉnh chiều cao theo tỷ lệ khung hình */
+    max-height: 500px; /* Giới hạn chiều cao tối đa của ảnh */
+}
+
+.chu3 {
+    margin-top: 50px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #222020;
+}
+ul {
+    list-style-type: disc; /* Đảm bảo hiện dấu chấm tròn */
+    margin-left: 20px; /* Khoảng cách lùi vào của danh sách */
+    padding-left: 20px; /* Đảm bảo khoảng cách đồng đều giữa các mục */
+    font-size: 18px; /* Tăng kích thước chữ cho danh sách */
+}
+
+li {
+    margin-bottom: 20px; /* Tăng khoảng cách giữa các mục */
+    line-height: 1.6; /* Tăng khoảng cách giữa các dòng để dễ đọc hơn */
+}
+
+p {
+    font-size: 20px; /* Kích thước chữ cho đoạn văn trước danh sách */
+    margin-bottom: 15px; /* Khoảng cách giữa đoạn văn và danh sách */
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+  
+  th td {
+   background-color:#070707 ;
+    padding: 10px;
+    text-align: left;
+  }
+  thead tr th{
+        color:#070707;
+  }
+  th {
+  color: #070707;
+    font-weight: bold;
+  }
+
+  thead {
+    background-color: #848684;
+    color: rgb(16, 15, 15);
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+
+  caption {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  .highlight {
+    color: #007BFF; /* Màu xanh dương */
+    font-weight: bold;
+}
+
+.chu4 {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+}
+

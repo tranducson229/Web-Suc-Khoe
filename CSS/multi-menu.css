@@ -1,0 +1,133 @@
+body{
+    background-image: url("../Media/bg.jpg");
+    
+}
+#header{
+    background-color: #131921;
+    
+}
+.container{
+    max-width: 960px;
+    margin: 0px auto;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+}
+#logo{
+    padding: 18px 0px;
+    font-family:"Font Awesome 5 Free"; 
+    font-weight:  900; 
+    content:"\f015";
+    color: #f5f5f5;
+}
+
+#logo img{
+    max-width: 50px;
+    height: auto;
+}
+#list{
+    content: "\f03a";
+    font-weight: 900;
+    color: #f5f5f5;
+    font-family: 'Font Awesome 5 Free';
+    padding: 18px 0px;
+}
+#main-menu{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#main-menu li{
+    position: relative;
+}
+#main-menu li a{ /* #main-menu li a: tác động vào thẻ a nằm trong li và li nằm trong main-menu*/
+    color: #f8f8f8;
+    display: block;
+    text-decoration: none;
+    padding: 18px 20px;
+}
+#main-menu ul.sub-menu{
+    position: absolute;
+    background:#12181f ;
+    padding: 15px 0px;
+    list-style: none;
+    width: 200px;
+    border: 1px solid #333;
+    display: none;/* để ẩn các menu con đi */
+}
+#main-menu li:hover>ul.sub-menu{/* ">" dùng để tác động trực tiếp vào đối tượng */
+    display: block;
+}
+#main-menu ul.sub-menu a{
+    padding: 8px 15px;
+    border-bottom: 1px solid #333;
+    left:0;
+}
+#main-menu ul.sub-menu li:hover>a{ /* ">" dùng để tác động trực tiếp vào đối tượng */
+    border-bottom: 1px solid #727272;
+}
+#main-menu ul.sub-menu li:last-child a {
+    border-bottom: none;
+}
+#main-menu ul.sub-menu ul.sub-menu {
+    left:200px;
+    top:-15px;
+}
+#main-menu>li>a {
+    position: relative;
+}
+#main-menu>li>a::before{
+    content: "";
+    height: 4px;
+    width: 0px;
+    background: #f00;
+    position: absolute;
+    bottom: 0px;
+   transition: 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+#main-menu>li:hover>a::before{
+    width: 100%;
+    left:0px;
+}
+#main-menu>li.has-child::after{
+    font-family:"Font Awesome 5 Free"; 
+    font-weight:600; 
+    content:"\f107";
+    color: #f5f5f5;
+    position: absolute;
+    top:0px;
+    right: 0px;
+    padding: 18px 0px;
+}
+#main-menu .sub-menu li:hover>a{
+    color:crimson;
+}
+#main-menu .sub-menu>li.has-child::after{
+    font-family:"Font Awesome 5 Free";
+    font-weight:600; 
+    content:"\f105";
+    color: #f5f5f5;
+    position: absolute;
+    top:0px;
+    right: 10px;
+    padding: 8px 0px;
+}
+#main-menu .sub-menu>li.has-child :hover::after{ /*tác động vào thẻ li có lớp là has-child và tác động vào thẻ after của li.has-child*/ 
+    color:crimson;
+}
+#footer{
+  
+    height: 800px;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #333;
+}
+#icon-footer{
+    color: #333;
+    font-weight: 100%;
+    font-family: "Font Awesome 5 Free";
+    content: "\f179";
+}
