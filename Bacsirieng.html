@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Services</title>
+    <link rel="stylesheet" href="CSS/bacsirieng.css">
+    <link rel="stylesheet" href="CSS/css/all.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">   
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<style>
+   .language-switcher {
+            position: relative;
+            display: inline-block;
+            padding-top: 20px;
+            margin-left: 15px;
+        }
+
+        .language-icon {
+            font-size: 30px; /* Kích thước biểu tượng địa cầu */
+            cursor: pointer;
+            
+        }
+
+        .language-dropdown {
+            display: none;
+            position: absolute;
+            top: 55px;
+            left: 13.5px;
+            background-color: white;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 4px;
+            width: 120px; /* Chiều rộng của dropdown */
+        }
+
+        .language-dropdown button {
+            color: black;
+            padding: 10px; /* Điều chỉnh padding */
+            text-decoration: none;
+            display: flex; /* Sử dụng flexbox */
+            justify-content: center; /* Căn giữa theo chiều ngang */
+            align-items: center; /* Căn giữa theo chiều dọc */
+            font-size: 16px; /* Điều chỉnh kích thước chữ */
+            text-align: center; /* Căn giữa chữ theo chiều ngang */
+            width: 100%; /* Chiều rộng của từng phần tử */
+            height: 40px; /* Chiều cao cố định cho từng nút */
+            box-sizing: border-box; /* Đảm bảo padding không ảnh hưởng đến chiều rộng */
+            border: 1px solid black; /* Thêm viền đen (như trong hình) */
+        }
+
+        .language-dropdown a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .language-switcher:hover .language-dropdown {
+            display: block;
+        }
+</style>
+<body>
+  <div id="wrapper">
+    <div class="header">
+       <nav class="container">
+        <a href="Web_Suc_Khoe.html" id="logo" style="text-decoration: none;color: #000;">
+          <img src="Media/logo.svg" alt="" srcset="" style="width: 15%; "> HEALTH CARE
+        </a>
+        <ul id="main-menu">
+            <li id="title"><a href="Web_Suc_Khoe.html">Trang chủ</a></li>
+            <li id="services" class="has-child">
+                <a href="#">Dịch vụ</a>
+                <ul class="sub-menu">
+                  <li><a id="service4" href="face_form.html">Kiểm tra tâm lý</a></li>
+                  <li><a id="service2" href="Tuvantrilieutamly.html">Tư vấn trị liệu tâm lý</a></li>
+                  <li><a id="service3" href="khamtuxa.html">Khám từ xa</a></li>
+                  <li><a id="service1" href="Bacsirieng.html">Bác sĩ riêng</a></li>
+                   
+                </ul>
+            </li>
+        
+            <li id="expert">
+             <a href="">Chuyên gia</a>
+                <ul class="sub-menu">
+                    <li><a id="expert1"href="">Danh sách</a></li>
+                    <li><a id="expert2"href="">Chuyên gia tư vấn trực tiếp</a></li>
+                     <li><a id="expert3"href="">Đặt hẹn</a></li>
+                </ul>
+          </li>
+          <li id="community">
+            <a  href="">Cộng đồng</a>
+                <ul class="sub-menu">
+                    <li><a id ="forum" href="">Diễn đàn</a></li>
+                    <li><a id ="support" href="">Hỗ trợ</a></li>
+                </ul>
+            </li>
+          <li id="about_us">
+            <a href="">Về chúng tôi</a>
+                <ul class="sub-menu">
+                    <li><a id="mission" href="">Sứ mệnh</a></li>
+                    <li><a id="vision"href="">Tầm nhìn phát triển</a></li>
+                </ul>
+        </li>
+        <div class="language-switcher">
+            <!-- Biểu tượng địa cầu -->
+            <i class="fa-solid fa-earth-americas fa-xl" ></i>
+    
+            <!-- Danh sách ngôn ngữ -->
+            <div class="language-dropdown">
+                <button onclick="changeLanguage('en')">English</button>
+                <button onclick="changeLanguage('vi')">Tiếng Việt</button>
+                <button onclick="changeLanguage('jp')">日本語</button>
+            </div>
+        </div>
+    </nav>
+    
+</div>
+</div>
+
+      
+             
+             <script>
+              const translations =
+              {
+                "en": {
+                    "title": "Home",
+                    "services": "Services",
+                    "service1": "Telemedicine",
+                    "service2": "Psychotherapy Consultation",
+                    "service3": "Personal Doctor",
+                    "service4": "Health Check",
+                    "service5": "Health News",
+                    "expert": "Expert",
+                    "expert1": "List of Experts",
+                    "expert2": "Direct Consultation",
+                    "expert3": "Book an Appointment",
+                    "community" : "Community",
+                    "forum" : "Forum",
+                    "support": "Support",
+                    "about_us": "About Us",
+                    "mission": "Mission",
+                    "vision": "Vision",
+                    "follow":"Follow us: ",
+                    "mes":"<span style='color: rgb(11, 196, 134)'> TRUSTED health partner</span>",
+                    "mes_1":"We help you maintain a healthy lifestyle, and when you need medical consultation, we connect you with leading specialists via voice and video calls.",
+                    "patients":"For patients",
+                    "thao":"Services",
+                    "thuong":"Guide",
+                    "phuong":"Blog",
+                    "ngoc":"Membership program",
+                    "ques":"Question",
+                    "sup":"Support",
+                    "contact":"Contact",
+                    "privacy":"Privacy",
+                    "in4":"Information",
+                    "school":"Phuong Dong Univerysity, Minh Khai, Hai Ba Trung, Ha Noi",
+                    "email":"tranducson2134@gmail.com",
+                    "tele_1":"+ 84 559 174 159",
+                    "tele_2":"+84 234 567 89",
+                    "txt_4":"Having a personal doctor for someone to love - is no longer a luxury for Vietnamese families",
+                    "personal_doctor":"Private Doctor",
+                    "nd1":"Having a doctor who understands you and takes care of your health regularly is priceless!",
+                    "kq1":"Result care: a personal doctor is someone who can understand the basics and can predict more accurately and quickly, in addition to being able to come up with the most suitable plan, in a personal way not like any other person. any other patient.",
+                    "kq2":"Preventive care: Because they understand your physical condition, lifestyle and wishes, your personal doctor has the ability to detect common diseases early, learn how to prevent them, and motivate you better.",
+                    "kq3":"Continuous care: Whether it's a holiday or Sunday, your personal doctor is someone who can respond to you within 24 hours, even if you're traveling abroad.",
+                    "kq4":"Comprehensive care: Personal doctors work in the healthcare industry and therefore have trusted associates available. You will be properly introduced to in-depth science when you need to explore further. Other specialists can be easily reached quickly with your own doctor - someone who understands your medical history, to give you the most appropriate expectations.",
+                    "kq5":"More comfortable: Many people like to go to the doctor because of 'White Coat' syndrome (White Coat Syndrome), their blood pressure increases when thinking about doctors and clinics. Health care will become simpler than ever when you can chat on the phone with a doctor in your own space. Your relationship with your doctor will be stronger, you will be more satisfied, and you will be healthier.",
+                    "kq6":"More autonomy: Health is determined by you personally, your personal doctor understands and respects that. You and the doctor will discuss independently, without being forced by the rules or regulations of the hospital, general medical office where the doctor works, or any other third party.",
+                    "kq7":"More economical: First is to save time and effort on travel. In the end, you save the cost of medical examinations through many specialties and the cost of tests or other paraclinical services, when going to medical centers, because the medical staff there don't know your usage history and status.",
+                    "kq8":"More convenient: Of course, in addition to consulting calls when you need to be examined about a medical condition, you can completely text and receive a response within 24 hours regardless of any simple questions.",
+                    "benefits":"Benefits of private doctor package",
+                    "b1":"Be cared for by a personal doctor - the person who understands you best.",
+                    "b2":"Flexible sleeping hours",
+                    "b3":"There is no need to make an appointment according to the hospital or clinic schedule, you can leave a request to call back, and the personal doctor will flexibly call you at any time of the day.",
+                    "b4":"Throughout 7 days/week, whether it's early morning, lunch break, evening, weekend or holiday... you can always receive a call or response from your personal doctor via text message (Question knowledge/questions after examination).",
+                    "b5":"Cost effective",
+                    "b6":"Instead of paying the examination fee for each appointment with a fixed number of consulting sessions (10 - 15 - 20 - 30 - 40 - 45 - 60 minutes), the examination fee will be calculated based on the actual number of minutes incurred.",
+                    "b7":"There is no need to book consultation minutes in advance, patients can chat for as long as they like - as long as the restrictions remain. Before expiration, the system will send a notification for further extension, avoiding interruption of exploration.",
+                    "b8":"When you have your own doctor, you can continue to ask about your disease and treatment via text message (Knowledge Questions/Post-examination Questions), without having to conduct a telemedicine examination immediately before. . Because your personal doctor is the one who has the right to proactively call you, to clarify vague manifestations or symptoms due to lack of information in messages.",
+                    "b9":"Better care",
+                    "b10":"Receive private care and be on the doctor's list of familiar patients in the system.",
+                    "b11":"Doctors and patients understand each other better, so questions are often shorter and more effective.",
+                    "b12":"Because your personal doctor is the one who understands your condition best, expectations will be more accurate, and advice and treatment will also be more appropriate.",
+                    "b13":"WHO IS THE PRIVATE DOCTOR FOR?",
+                    "b14":"Choose your baby's own doctor",
+                    "b15":"Parents not only want their children to be healthy, but they also want them to develop comprehensively and always be happy. Therefore, whether it's just consulting on infant feeding, or being a doctor for common diseases such as colds, fever, cough, diarrhea... or taking care of chronic problems such as allergies or asthma, Obesity... and even counseling on psychological issues when children start kindergarten, hyperactivity, autism, homework pressure, school violence... then of course parents always want a doctor. pediatrician they can trust.",
+                    "b16":"Your baby's personal doctor will be a doctor specializing in pediatric general medicine, trained to treat and care for a variety of pediatric problems, primary health care or internal medicine care. Doctors have enough expertise to solve children's health problems in a comprehensive way - child-centered. Presidential Internal Medicine Physicians also have expertise in primary and secondary disease prevention, preventive care through vaccination, health education or consultation to relieve injuries, slow or prevent disease. Progress in disease progression through screening and assessment of risk factors.",
+                    "b17":"Effective communication: In addition to ability, it is important to have a doctor follow closely all year, always responding whenever parents need it, by both direct communication via phone or text message (Questions knowledge/Concerns after medicine), will bring peace of mind to all parents.",
+                    "b18":"Intimate relationship: Parents can choose the same pediatrician to care for their newborn until the child turns 18 years old. This is the foundation for a long and close relationship with family and children. The child's examination with the doctor also becomes much more comfortable and effective.",
+                    "b19":"Honest and trustworthy: Doctors especially understand that they have been chosen to provide year-round health care for children. From the first discovery, they devoted all their attention to learning about the child's physical condition and history. And in every exploration that follows, holistic health and sustainable therapy are the personal physician's way of choosing to handle any child's problem.",
+                    "b20":"Perseverance and Patience: The doctor noted that each meeting and consultation is not a phase and then thinking about meeting again. They want to address the dryness and skills so that parents can understand and follow through, as they expect, so that the long-term relationship is pleasant and productive.",
+                    "b21":"The child is the personal doctor's first priority: the child is on the personal doctor's list of regular patients, and the doctor will do everything necessary to ease the parents' worries and protect the child's health.",
+                    "reason":"Choose your own doctor for adults",
+                    "r1":"We all need health care, at least a couple of times a year. And if there is a chronic illness, it is even more necessary to seek care from people who have the power to predict and balance treatments for many different problems in the body.",
+                    "r2":"To find a suitable personal doctor, you must consider your current health condition and needs. People with complex needs or chronic illnesses will benefit most from private physician services, across every edge of healthcare. If you are already healthy and do not have many medical needs, a personal doctor who understands your physical condition, history and genetic factors in your family may be employed, a doctor who considers you a regular patient, At the same time, someone who not only advises on health maintenance, effective prevention, and supports you in achieving your health goals, but is still available to support you when you need it, is also invaluable.",
+                    "r3":"Private doctor package for many other problems?",
+                    "r4":"Retail consulting",
+                    "r5":"Private doctor",
+                    "r6":"How to calculate fees",
+                    "r7":"According to consultation (10 - 15 - 20 - 30 - 40 - 45 - 60 minutes/session depending on the specialty)",
+                    "r8":"By minute",
+                    "r9":"Pay fees",
+                    "r10":"Ever consulted",
+                    "r11":"Once a year",
+                    "r12":"Careteam service fee",
+                    "r13":"One fixed fee for the consultation. (Users call membership free for 12 months validity)",
+                    "r14":"Exempt",
+                    "r15":"Consulting duration",
+                    "r16":"Fixed number of minutes per session. Automatically cuts off when pre-registered hours expire",
+                    "r17":"No pre-registration required No interruption (within yearly plan limit)",
+                    "r18":"Ask to make an appointment before calling",
+                    "r19":"Minimum 45 minutes - based on available schedule",
+                    "r20":"It is not necessary to make an appointment with the doctor to call back when required",
+                    "r21":"Prioritize calendar ranking",
+                    "r22":"No priority",
+                    "r23":"Priority is given",
+                    "r24":"Declare your illness before consulting",
+                    "r25":"Request full information before consulting",
+                    "r26":"Not required",
+                    "r27":"Health answers via text message (Knowledge questions/Post-examination questions)",
+                    "r28":"No expectations, treatment direction, or medication advice through Knowledge Questions. Post-examination questions can only be sent within a certain time, after the most difficult examination.",
+                    "r29":"Unlimited.",
+                    "process":"SERVICE PROCESS",
+                    "p1":"A first in-depth consultation:",
+                    "p2":"After successful registration, the doctor will have a thorough first consultation, to get acquainted and fully understand information about the patient's history, physical condition and care needs.",
+                    "p3":"Whole year",
+                    "p4":"Patients can send a message (Knowledge questions/Post-examination questions) or Request a call back to the doctor, the doctor will flexibly call back or respond to the message, without an appointment and without a working schedule. . The doctor can also proactively contact the patient if he finds that the information sent via text message is lacking information or when he needs to inquire and further monitor the condition being treated, without the patient having to send a request.",
+                    "p5":"Extend",
+                    "p6":"Can be renewed at any time, remaining old limit balance will be accumulated and extended until the new renewal date.",
+                    "p7":"COSTS AND PAYMENT INSTRUCTIONS:",
+                    "p8":"Remote examination fee includes:",
+                    "p9":"1. Consulting fee: a fixed fee for a limited amount of time (number of minutes) for the whole year.",
+                    "p10":"2. Care Team service fee: waived.",
+                    "p11":"Users need to deposit money into the Examination Book before payment:",
+                    "p12":"Momo e-wallet, ZaloPay e-wallet",
+                    "p13":"ATM Card or Credit Card, via Zalopay's Secure Payment Gateway",
+                    "p14":"Transfer (write transfer content as registered phone number) to the following bank account:",
+                    "start":"WHERE TO START?",
+                    "s1":"Download the application, open the examination book",
+                    "s2":"After downloading <span class='highlight'>application</span>, users register for a medical examination book with their phone number, adding information about themselves and their relatives. The examination book will be a place to store medical history for many family members.",
+                    "s3":"You should register with the most commonly used phone number, so that the system can always support and connect successfully.",
+                    "s4":"Become a member",
+                    "s5":"Registering for the <span class='highlight'>membership</span> package will help users access the entire knowledge base and health care and education tools, with free services at each consultation. consultation, as well as many other incentives and privileges.",
+                    "s6":"Private doctor is a service available only to members. You choose to add the additional benefit 'Personal Doctor' when registering as a member.",
+                    "s7":"Businesses purchase health benefits packages for employees",
+                    "s8":"Businesses can also sign up for a health benefits program for their employees, allowing employees to enjoy high-quality healthcare from anywhere in the world, reducing time pressure and travel effort.",
+                    "s9":"Please email <span class='highlight'>xinchao@healthcare.vn</span> for advice or to receive a quote.</p>",
+                    "s10":"Refences",
+                  },
+                  "vi": {
+                    "title": "Trang chủ",
+                    "services": "Dịch vụ",
+                    "service1": "Khám từ xa",
+                    "service2": "Tư vấn trị liệu tâm lý",
+                    "service3": "Bác sĩ riêng",
+                    "service4": "Kiểm tra tâm lý",
+                    "service5": "Tin tức sức khỏe",
+                    "expert": "Chuyên gia",
+                    "expert1": "Danh sách",
+                    "expert2": "Chuyên gia tư vấn trực tiếp",
+                    "expert3": "Đặt hẹn",
+                    "community":"Cộng đồng",
+                    "forum": "Diễn đàn",
+                    "support": "Hỗ trợ",
+                    "about_us": "Về chúng tôi",
+                    "mission": "Sứ mệnh",
+                    "vision": "Tầm nhìn",
+                    "sologan_1":"Bạn muốn tự chăm sóc bản thân",
+                    "txt_1":"Để <span class='highlight'>Health Care</span> giúp bạn",
+                    "sologan_2":"Bạn cần lời khuyên từ chuyên gia",
+                    "txt_2":"Để <span class='highlight'>Health Care</span> giúp bạn",
+                    "sologan_3":"Bạn cảm thấy áp lực, lo lắng, tự ti ",
+                    "txt_3":"Để <span class='highlight'>Health Care</span> giúp bạn",
+                    "ND_txt_1":"Thực trạng",
+                    "ND_txt_2":"Một số giải pháp, bài tập cơ bản",
+                    "ND_txt_3":"Xem thêm",
+                    "remote":"Dịch vụ khám từ xa",
+                    "ND1":"Tiếp cận đơn giản, điều trị hiệu quả, chi phí tiết kiệm",
+                    "doctor":"Bác sĩ riêng",
+                    "cnt":"Cho người ta thương yêu",
+                    "remote_2":"Khám từ xa",
+                    "cnt_2":"Khám gần khám xa, cốt là khám kỹ!",
+                    "news":"Edu Health",
+                    "cnt_3":"Hỏi kiến thức, Healthtalk, Video trainings",
+                    "know":"HealthGPT",
+                    "cnt_4":"Chat 24/7 với bác sĩ AI",
+                    "feedback":"Đánh giá của khách hàng",
+                    "cmt_1":"Em cảm ơn bác sĩ rất nhiều. Dù chỉ là khám bệnh từ xa nhưng bác sĩ vẫn cho em cảm giác an toàn từ 1 vị bác sĩ nhiệt tình và rất có tâm. Cảm ơn wellcare vì nhờ kênh khám bệnh từ xa này mà những người bệnh ở tỉnh xa như tụi em đang rất hoang mang ko biết khám bệnh ở đâu, ko biết tìm đâu 1 nơi mình tin tưởng tuyệt đối thì Health Care đã giúp e làm chuyện đó. Cảm ơn Health Care rất nhiều.",
+                    "cmt_2":"Đội ngũ hỗ trợ rất tốt, kịp thời. Bác sĩ nhiệt tình, giỏi chuyên môn, hướng dẫn và giải đáp được thắc mắc, lo âu của bệnh nhân, giúp người bệnh an tâm để điều trị.",
+                    "cmt_3":"Anh chị em nghiệp vụ của Wellcare thực sự chu đáo, tận tình đối với khách hàng- những bệnh nhân và người nhà. Cảm ơn các anh chị. Và mong hệ thống (Web) của Health Care sớm hoàn chỉnh và liên tục được cập nhật để ngày cảng thuận lợi, hiện đại hơn. Bác sĩ khám, tư vấn rất tận tình, rõ ràng, chuyên nghiệp, tác động tích cực đến người bệnh. Cảm ơn đội ngũ bác sĩ nhiều !",
+                    "follow":"Theo dõi chúng tôi: ",
+                    "mes":"<span style='color: rgb(11, 196, 134)'> Đối tác sức khỏe TIN CẬY</span>",
+                    "mes_1":"Chúng tôi giúp bạn duy trì một lối sống lành mạnh, và khi bạn cần tham vấn y tế, chúng tôi kết nối bạn với những bác sĩ chuyên khoa hàng đầu qua gọi thoại và gọi video.",
+                    "patients":"Dành cho bệnh nhân",
+                    "thao":"Dịch vụ",
+                    "thuong":"Cẩm nang",
+                    "phuong":"Blog sống khỏe",
+                    "ngoc":"Chương trình thành viên",
+                    "ques":"Câu hỏi",
+                    "sup":"Hỗ trợ",
+                    "contact":"Liên hệ",
+                    "privacy":"Chính sách bảo mật",
+                    "in4":"Thông tin",
+                    "school":"Đại học Phương Đông (CS2), Minh Khai, Hai Bà Trưng, Hà Nội",
+                    "email":"tranducson2134@gmail.com",
+                    "tele_1":"+ 84 559 174 159",
+                    "tele_2":"+84 234 567 89",
+                    "txt_4":"Có một bác sĩ riêng cho người ta thương yêu - giờ đây không còn là điều xa xỉ của các gia đình Việt",
+                    "personal_doctor":"Bác sĩ riêng",
+                    "nd1":"",
+                    "kq2":"Chăm sóc dự phòng: vì hiểu rõ thể trạng, lối sống và mong muốn của bạn, bác sĩ riêng có khả năng phát hiện sớm các bệnh dễ mắc phải, dặn dò trước cách phòng ngừa, và động viên tinh thần bạn tốt hơn.",
+                    "kq3":"Chăm sóc liên tục: Dù đó là ngày lễ hay Chủ nhật, bác sĩ riêng là người có thể phản hồi bạn trong vòng 24h, kể cả khi bạn đang đi du lịch ở nước ngoài.",
+                    "kq4":"Chăm sóc toàn diện: Bác sĩ riêng công tác trong ngành chăm sóc sức khỏe và do vậy luôn có sẵn các cộng sự đáng tin cậy. Bạn sẽ được giới thiệu đến đúng chuyên khoa khi cần thăm khám sâu hơn. Bác sĩ chuyên khoa khác có thể dễ dàng hội chẩn nhanh với bác sĩ riêng - người hiểu rõ tiền sử bạn, để đưa ra chẩn đoán phù hợp nhất.",
+                    "kq5":"Thoải mái hơn: Nhiều người ghét đi khám vì hội chứng “Áo blouse trắng” (White coat hypertension), huyết áp họ tăng lên khi nghĩ đến bác sĩ và phòng khám. Việc chăm sóc sức khỏe sẽ trở nên đơn giản hơn bao giờ hết khi bạn được trò chuyện qua điện thoại với bác sĩ trong không gian riêng của mình. Mối quan hệ với bác sĩ sẽ gắn bó hơn, bạn sẽ hài lòng hơn, và do vậy khỏe mạnh hơn.",
+                    "kq6":"Tự chủ hơn: Sức khỏe là quyết định cá nhân của bạn, bác sĩ riêng hiểu và tôn trọng điều đó. Bạn và bác sĩ sẽ thảo luận một cách độc lập, không bị ràng buộc bởi quy định hay luật lệ của bệnh viện, phòng khám đa khoa nơi công tác của bác sĩ, hay bất cứ bên thứ ba nào khác.",
+                    "kq7":"Tiết kiệm hơn: Đầu tiên là tiết kiệm được thời gian và công sức đi lại. Kế đến là bạn tiết kiệm được chi phí lòng vòng khám bệnh qua nhiều chuyên khoa và chi phí xét nghiệm hay các dịch vụ cận lâm sàng khác, khi đi khám ở các trung tâm y khoa, vì các nhân viên y tế nơi đó không nắm rõ tiền sử và thể trạng của bạn.",
+                    "kq8":"Thuận tiện hơn: Tất nhiên, ngoài các cuộc gọi tư vấn khi cần thăm khám về một bệnh lý nào đó, thì bạn hoàn toàn còn có thể nhắn tin và nhận hồi đáp trong vòng 24h bất kể khi nào có các thắc mắc đơn giản.",
+                    "kq1":"Chăm sóc hiệu quả: bác sĩ riêng là hiểu rõ cơ thể bạn và có thể chẩn đoán chính xác và nhanh chóng hơn, ngoài ra còn có thể đưa ra một kế hoạch điều trị phù hợp nhất, với tư cách cá nhân chứ không phải là như là bất kỳ bệnh nhân thông thường nào khác.",
+                    "benefits":"Quyền lợi gói bác sĩ riêng",
+                    "b1":"Được chăm sóc bởi một bác sĩ riêng - người hiểu rõ mình nhất.",
+                    "b2":"Giờ giấc linh hoạt",
+                    "b3":"Không cần phải đặt hẹn trước theo lịch của bệnh viện hay phòng khám, bạn có thể để lại yêu cầu gọi lại, bác sĩ riêng sẽ linh động gọi cho bạn bất cứ lúc nào sắp xếp được trong ngày.",
+                    "b4":"Xuyên suốt 7 ngày/tuần, dù là sáng sớm, giờ nghỉ trưa, buổi tối muộn, ngày cuối tuần hay ngày lễ… lúc nào bạn cũng có thể nhận được cuộc gọi hay hồi đáp của bác sĩ riêng qua tin nhắn (Câu hỏi kiến thức/Thắc mắc sau khám).",
+                    "b5":"Chi phí hiệu quả",
+                    "b6":"Thay vì thanh toán phí khám theo từng cuộc hẹn với số phiên tư vấn có thời lượng cố định (10 - 15 - 20 - 30 - 40 - 45 - 60 phút), phí khám sẽ được tính theo số phút thực tế phát sinh.",
+                    "b7":"Không cần phải đăng ký trước thời lượng số phút tư vấn, bệnh nhân có thể trò chuyện bao lâu tùy thích - miễn là hạn mức năm vẫn còn. Trước khi hạn mức năm gần hết, hệ thống sẽ gửi thông báo để được gia hạn thêm, tránh gián đoạn cuộc khám.",
+                    "b8":"Khi có bác sĩ riêng, bạn được tiếp tục hỏi về bệnh và hướng điều trị qua tin nhắn (Câu hỏi kiến thức/Thắc mắc sau khám), mà không bắt buộc phải thực hiện một cuộc khám từ xa liền trước đó. Bởi vì bác sĩ riêng là người có quyền chủ động gọi cho bạn, để làm rõ các biểu hiện hoặc triệu chứng còn mơ hồ do tin nhắn thiếu thông tin.",
+                    "b9":"Chăm sóc tốt hơn",
+                    "b10":"Được chăm sóc riêng, nằm trong danh sách bệnh nhân quen của bác sĩ trên hệ thống",
+                        "b11":"Bác sĩ - bệnh nhân hiểu nhau hơn, nên các cuộc tư vấn thường ngắn và hiệu quả hơn.",
+                        "b12":"Vì bác sĩ riêng là người hiểu thể trạng mình nhất, chẩn đoán do vậy sẽ chuẩn xác hơn, lời khuyên và hướng điều trị cũng sẽ phù hợp hơn.",
+                        "b13":"Bác sĩ riêng dành cho ai?",
+                        "b14":"Chọn bác sĩ riêng cho bé",
+                        "b15":"Cha mẹ không chỉ mong con mình khỏe mạnh, mà còn mong các bé phát triển toàn diện và luôn luôn vui vẻ. Vì vậy, dù chỉ là tư vấn nuôi dưỡng trẻ sơ sinh, hay là khám các bệnh thông thường như như cảm cúm, sốt, ho, tiêu chảy… hoặc là chăm sóc các vấn đề mãn tính như là dị ứng, hen suyễn, béo phì… và kể cả là tư vấn các vấn đề về tâm lý khi con bắt đầu đi nhà trẻ, tăng động, tự kỷ, áp lực bài vở, bạo lực học đường… thì là tất nhiên là cha mẹ luôn muốn có được một bác sĩ nhi khoa mà họ có thể tin tưởng.",
+                        "b16":"Bác sĩ riêng cho bé sẽ là một bác sĩ thuộc chuyên khoa Nội tổng quát nhi, được đào tạo để điều trị và chăm sóc đa dạng nhiều vấn đề nhi khoa, chăm sóc sức khỏe ban đầu hoặc chăm sóc bệnh nhân nội trú. Bác sĩ có đủ chuyên môn để giải quyết vấn đề sức khỏe trẻ em một cách toàn diện - lấy trẻ em làm trung tâm. Bác sĩ Nội tổng quát nhi còn có kiến thức chuyên môn về phòng ngừa bệnh nguyên phát và thứ phát, chăm sóc dự phòng thông qua tiêm chủng, giáo dục sức khỏe hoặc tư vấn ngăn ngừa thương tích, làm chậm hoặc ngăn chặn sự tiến triển của bệnh thông qua việc sàng lọc và đánh giá các yếu tốt nguy cơ.",
+                        "b17":"Giao tiếp hiệu quả: Ngoài năng lực, thì việc có được một bác sĩ theo sát cả năm, luôn phản hồi bất cứ khi nào phụ huynh cần, bằng cả hai hình thức trao đổi trực tiếp qua điện thoại hay tin nhắn (Câu hỏi kiến thức/Thắc mắc sau khám), sẽ mang lại sự yên tâm cho tất cả các bậc cha mẹ.",
+                        "b18":"Mối quan hệ thân tình: Cha mẹ có thể chọn cùng một bác sĩ nhi chăm sóc cho con mình mới chào đời cho đến khi trẻ tròn 18 tuổi. Đây là nền tảng cho mối quan hệ dài lâu và thân tình với gia đình và trẻ nhỏ. Việc thăm khám của trẻ với bác sĩ cũng nhờ đó mà trở nên dễ chịu và hiệu quả hơn rất nhiều.",
+                        "b19":"Trung thực và đáng tin cậy: Bác sĩ riêng hiểu rằng, họ đã được chọn là người chăm sóc sức khỏe cả năm cho trẻ. Từ cuộc khám đầu tiên, họ đã dành toàn bộ sự chú tâm để tìm hiểu về thể trạng và tiền sử của trẻ. Và ở tất cả các cuộc khám sau đó, sức khỏe toàn diện và liệu pháp bền vững là cách mà bác sĩ riêng lựa chọn để xử lý bất kỳ vấn đề nào cho trẻ.",
+                        "b20":"Kiên trì và Nhẫn nại: Bác sĩ riêng hiểu rằng, từng lần gặp gỡ và tư vấn đều không phải là một lần chóng vánh rồi chẳng bao giờ gặp lại. Họ có mong muốn giải thích cặn kẽ và kỹ lưỡng sao cho phụ huynh có thể hiểu và làm theo, đúng như họ kỳ vọng, để mối quan hệ lâu dài trở nên dễ chịu và hiệu quả.",
+                        "b21":"Trẻ là ưu tiên hàng đầu của bác sĩ riêng: trẻ nằm trong danh sách bệnh nhân quen của bác sĩ riêng, bác sĩ sẽ làm mọi điều cần thiết để giảm bớt lo lắng của cha mẹ và đảm bảo sức khỏe của trẻ.",
+                        "reason":"Chọn bác sĩ riêng cho người lớn",
+                        "r1":"Tất cả chúng ta đều cần được chăm sóc sức khỏe, ít thì đôi ba lần một năm. Và nếu có bệnh mãn tính, thì càng cần có sự chăm sóc của người có năng lực chẩn đoán và cân bằng các phương pháp điều trị cho nhiều vấn đề khác nhau trên cơ thể.",
+                        "r2":"Để chọn được một bác sĩ riêng phù hợp, bạn cần phải xem xét tình trạng sức khỏe và nhu cầu hiện tại của bản thân. Những người có nhu cầu phức tạp hoặc mắc bệnh mãn tính sẽ được hưởng lợi nhiều nhất từ dịch vụ bác sĩ riêng, trên mọi khía cạnh chăm sóc sức khỏe. Còn nếu bạn hiện đang khỏe mạnh và không có nhiều nhu cầu y tế, thì việc có được một người bác sĩ riêng hiểu rõ thể trạng, tiền sử và yếu tố di truyền trong gia đình bạn, một người bác sĩ coi bạn là bệnh nhân quen, đồng thời là người không chỉ tư vấn duy trì sức khỏe, phòng ngừa hiệu quả, hỗ trợ bạn đạt được các mục tiêu sức khỏe của mình, mà còn sẵn lòng hỗ trợ ngay khi bạn cần, cũng là điều vô giá.",
+                        "r3":"Gói bác sĩ riêng khác gì nhiều cuộc tư vấn lẻ?",
+                        "r4":"Tư vấn lẻ",
+                        "r5":"Bác sĩ riêng",
+                        "r6":"Cách tính phí",
+                        "r7":"Theo phiên tư vấn (10 -15 - 20 - 30 - 40 - 45 - 60 phút/phiên tùy từng chuyên khoa)",
+                        "r8":"Theo phút",
+                        "r9":"Đóng phí",
+                        "r10":"Từng lần tư vấn",
+                        "r11":"Một lần cả năm",
+                        "r12":"Phí dịch vụ careteam",
+                        "r13":"Một mức phí cố định cho từng lần tư vấn. (Người dùng có gói thành viên được miễn trong 12 tháng hiệu lực)",
+                        "r14":"Được miễn",
+                        "r15":"Thời lượng tư vấn",
+                        "r16":"Số phút cố định mỗi phiên Tự động ngắt khi hết số phút đăng ký trước",
+                        "r17":"Không cần đăng ký trước Không ngắt (trong hạn mức gói của cả năm)",
+                        "r18":"Yêu cầu đặt hẹn trước khi gọi",
+                        "r19":"Tối thiểu 45 phút - theo lịch trống có sẵn",
+                        "r20":"Không cần đặt hẹn Bác sĩ gọi lại khi có yêu cầu",
+                        "r21":"Ưu tiên xếp lịch",
+                        "r22":"Không ưu tiên",
+                        "r23":"Được ưu tiên",
+                        "r24":"Khai bệnh trước khi tư vấn",
+                        "r25":"Yêu cầu cung cấp đầy đủ trước khi tư vấn",
+                        "r26":"Không yêu cầu",
+                        "r27":"Giải đáp sức khỏe qua tin nhắn (Câu hỏi kiến thức/Thắc mắc sau khám)",
+                        "r28":"Không chẩn đoán, hướng điều trị, hay tư vấn thuốc qua Câu hỏi kiến thức. Thắc mắc sau khám chỉ có thể gửi trong một thời hạn nhất định, sau một cuộc khám gần nhất.",
+                        "r29":"Không giới hạn.",
+                        "process":"Quá trình dịch vụ",
+                        "p1":"Một cuộc tư vấn sâu đầu tiên:",
+                        "p2":"Sau khi đăng ký thành công, bác sĩ sẽ có một cuộc tư vấn kỹ đầu tiên, nhằm làm quen và nắm rõ đầy đủ thông tin về tiền sử, thể trạng và nhu cầu chăm sóc từ bệnh nhân.",
+                        "p3":"Cả năm sau đó",
+                        "p4":"Bệnh nhân có thể gửi tin nhắn (Câu hỏi kiến thức/Thắc mắc sau khám) hoặc Yêu cầu gọi lại cho bác sĩ, bác sĩ sẽ linh động gọi lại hoặc phản hồi tin nhắn, không cần hẹn trước và không theo lịch làm việc. Bác sĩ cũng có thể chủ động liên lạc bệnh nhân nếu nhận thấy thông tin gửi qua tin nhắn còn thiếu dữ kiện hoặc khi cần hỏi thăm và theo dõi tiếp bệnh lý đang điều trị, mà không cần bệnh nhân phải gửi yêu cầu.",
+                        "p5":"Gia hạn",
+                        "p6":"Có thể gia hạn bất cứ lúc nào, số dư hạn mức cũ còn lại sẽ được cộng dồn và nới hạn sử dụng đến ngày gia hạn mới.",
+                        "p7":"Chi phí và Hướng dẫn thanh toán:",
+                        "p8":"Mức phí khám từ xa bao gồm:",
+                        "p9":"1.Phí tư vấn: một mức phí cố định cho một hạn mức thời lượng (số phút) dùng cả năm.",
+                        "p10":"2.Phí dịch vụ Careteam: được miễn",
+                        "p11":"Người dùng cần Nạp tiền vào Sổ khám trước khi thanh toán:",
+                        "p12":"Ví điện tử Momo, Ví điện tử ZaloPay",
+                        "p13":"Thẻ ATM hoặc Thẻ tín dụng, qua Cổng thanh toán an toàn của Zalopay",
+                        "p14":"Chuyển khoản (ghi nội dung chuyển khoản là số điện thoại đã đăng ký) đến tài khoản ngân hàng sau:",
+                        "start":"Bắt đầu từ đâu?",
+                        "s1":"Tải ứng dụng, mở sổ khám",
+                        "s2":"Sau khi tải ứng dụng, người dùng đăng ký sổ khám bằng số điện thoại, thêm thông tin của mình và người thân. Sổ khám sẽ là nơi lưu trữ bệnh sử cho nhiều thành viên trong gia đình.",
+                        "s3":"Bạn nên đăng ký bằng số điện thoại thường dùng nhất, để hệ thống luôn có thể hỗ trợ và kết nối thành công.",
+                        "s4":"Trở thành thành viên",
+                        "s5":"Đăng ký gói thành viên sẽ giúp người dùng được truy cập toàn bộ kho tri thức và các công cụ chăm sóc và giáo dục sức khỏe, được miễn phí dịch vụ ở mỗi cuộc tư vấn, cũng như nhiều ưu đãi và đặc quyền khác.",
+                        "s6":"Bác sĩ riêng là dịch vụ chỉ dành riêng cho thành viên. Bạn chọn thêm quyền lợi bổ sung ‘Bác sĩ riêng’ khi đăng ký thành viên.",
+                        "s7":"Doanh nghiệp mua gói phúc lợi sức khỏe cho nhân viên",
+                        "s8":"Các doanh nghiệp cũng có thể đăng ký chương trình phúc lợi sức khỏe cho nhân viên của mình, để nhân viên được hưởng dịch vụ chăm sóc sức khỏe chất lượng cao từ bất cứ nơi nào trên thế giới, giảm bớt áp lực về thời gian và công sức đi lại.",
+                        "s9":"Vui lòng email tới xinchao@wellcare.vn để được tư vấn hoặc nhận báo giá.",
+                       
+                  },
+                  "jp":{
+                       "title": "ホームページ",
+                       "services": "サービス",
+                       "service1": "遠隔診療",
+                       "service2": "心理カウンセリング",
+                       "service3": "プライベートドクター",
+                       "service4": "健康チェック",
+                       "service5": "健康ニュース",
+                       "expert": "専門家",
+                       "expert1": "リスト",
+                       "expert2": "直接相談専門家",
+                       "expert3": "予約",
+                       "community": "コミュニティ",
+                       "forum": "フォーラム",
+                       "support": "サポート",
+                       "about_us": "私たちについて",
+                       "mission": "ミッション",
+                       "vision": "ビジョン",
+                       "sologan_1":"自分のことは大事にしたい",
+                       "txt_1":" <span class='highlight'>ヘルスケア</span>が お手伝いします",
+                       "sologan_2":"専門家からのアドバイスが必要ですか",
+                       "txt_2":"<span class='highlight'>ヘルスケア</span>が お手伝いします",
+                       "sologan_3":"プレッシャー、不安、自意識過剰を感じている",
+                       "txt_3":"<span class='highlight'>ヘルスケア</span>が お手伝いします",
+                       "ND_txt_1":"げんじょう",
+                       "ND_txt_2":"方法",
+                       "ND_txt_3":"もっと見る",
+                       "remote":"遠隔診察サービス",
+                       "ND1":"シンプルなアクセス、効果的な治療、コスト削減",
+                       "doctor":"開業医",
+                       "cnt":"人々にあなたを愛してもらいましょう",
+                       "remote_2":"遠隔診察",
+                       "cnt_2":"近くも遠くもじっくり観察するのがポイント!",
+                       "news":"エデュヘルス",
+                       "cnt_3":"知識を求める、Healthtalk、ビデオトレーニング",
+                       "know":"健康GPT",
+                       "cnt_4":"AI 医師と 24 時間 365 日チャットできます",
+                       "feedback":"フィードバック",
+                       "cmt_1":"医師、本当にありがとうございました。遠隔診療でしたが、熱心でとても親身な先生で安心感がありました。ウェルケアに感謝します。なぜなら、この遠隔診療チャネルのおかげで、私たちのような遠隔地の患者は非常に混乱しており、どこで診察を受ければよいのか、絶対に信頼できる場所をどこで見つけられるのかもわかりません。それを私たちが助けてくれました。ヘルスケアさん、本当にありがとうございました。",
+                       "cmt_2":"サポートチームは非常に優秀でタイムリーです。医師は熱心で熟練しており、患者の質問や懸念に答えて指導し、患者が安心して治療を受けられるようサポートします。",
+                       "cmt_3":"Wellcare のスタッフは真に思いやりがあり、患者やその家族などの顧客に対して献身的に取り組んでいます。兄弟姉妹の皆さん、ありがとう。そして私は、Health Care の (Web) システムがすぐに完成し、より便利で現代的なものになるよう継続的に更新されることを願っています。医師は非常に熱心に、わかりやすく、専門的に診察とアドバイスを行っており、患者に良い影響を与えます。医療チームの皆様、本当にありがとうございました！",
+                       "follow":"私たちに従ってください ",
+                       "mes":"<span style='color: rgb(11, 196, 134)'> 信頼できる健康パートナー</span>",
+                       "mes_1":"私たちは、お客様の健康的なライフスタイルの維持をお手伝いし、医療相談が必要な場合には、音声通話やビデオ通話を通じて一流の専門家におつなぎします。",
+                       "patients":"患者様向け",
+                       "thao":"サービス",
+                       "thuong":"ハンドブック",
+                       "phuong":"健康的な生活のブログ",
+                       "ngoc":"会員プログラム",
+                       "ques":"質問",
+                       "sup":"サポート",
+                       "contact":"連絡",
+                       "privacy":"プライバシーポリシー",
+                       "in4":"情報",
+                       "school":"フォンドン大学,ミンカイ、ハイバチュン、ハノイ",
+                       "email":"tranducson2134@gmail.com",
+                       "tele_1":"+ 84 559 174 159",
+                       "tele_2":"+84 234 567 89",
+                       "txt_4":"愛する人の主治医を持つことは、ベトナムの家族にとってもはや贅沢ではありません",
+                       "personal_doctor":"個人医師",
+                       "nd1":"あなたの健康を理解し、定期的にケアしてくれる医師がいることは、非常に貴重です！",
+                       "kq1":"結果ケア: 個人医師は、基本的な理解を持ち、迅速かつ正確に予測し、最適なプランを個別に提案できる人です。",
+                       "kq2":"予防ケア: あなたの体調、ライフスタイル、希望を理解しているため、一般的な病気を早期に発見し、予防方法を学び、モチベーションを与えることができます。",
+                       "kq3":"継続ケア: 休日や日曜日でも、24時間以内に対応し、海外にいる場合でも連絡が取れます。",
+                       "kq4":"包括的ケア: 個人医師は医療業界で活動しているため、信頼できる専門家と連携しています。専門的な相談が必要な場合、迅速に専門医に紹介してくれます。",
+                       "kq5":"より快適: 多くの人は「白衣症候群（White Coat Syndrome）」のため、医師に会うと血圧が上がることがあります。自宅でリラックスして電話で相談できるので、医療ケアがより簡単になります。",
+                       "kq6":"より自律的: 健康は個人の意思で決まります。個人医師はそのことを理解し尊重します。医師と独立して相談ができ、病院や第三者の規則に縛られることはありません。",
+                       "kq7":"より経済的: 移動の手間と時間が省け、複数の専門医での診察費用や検査費用も節約できます。",
+                       "kq8":"より便利: 医師に相談が必要なとき、テキストメッセージで24時間以内に回答が得られます。",
+                       "benefits":"プライベートドクターパッケージのメリット",
+                       "b1":"自分を最も理解してくれる個人医師にケアしてもらえます。",
+                       "b2":"フレキシブルな診療時間。",
+                       "b3":"病院やクリニックのスケジュールに合わせる必要はありません。リクエストを残せば、個人医師が都合の良い時間に電話をかけてくれます。",
+                       "b4":"週7日、早朝、昼休み、夕方、週末や休日でも、いつでも個人医師から電話やテキストメッセージで返信が得られます。",
+                       "b5":"コスト削減。",
+                       "b6":"固定されたコンサルティング時間（10、15、20、30、40、45、60分）ではなく、実際の使用時間に基づいて診療費が計算されます。",
+                       "b7":"事前に予約する必要はありません。患者は好きなだけ話すことができ、制限内であれば中断することはありません。期限が近づくと、システムが通知して延長を促し、中断を避けます。",
+                       "b8":"個人医師がいる場合、病気や治療に関する質問をテキストメッセージで行えます（知識質問／診察後の質問）。必要に応じて、個人医師は患者に連絡し、症状の確認や追加情報の収集を行います。",
+                       "b9":"より良いケア。",
+                       "b10":"個人医師のシステムに登録され、特別なケアを受けられます。",
+                       "b11":"医師と患者が互いに理解しているため、質問が簡潔で効果的です。",
+                       "b12":"個人医師はあなたの状態を最も理解しているため、期待値が正確で、アドバイスや治療も最適です。",
+                       "b13":"赤ちゃんのための個人医師を選びましょう。",
+                       "b14":"親は子どもの健康だけでなく、総合的な発達と幸福も望んでいます。そのため、育児相談や風邪、発熱、咳、下痢といった一般的な病気から、アレルギー、喘息、肥満などの慢性疾患、さらには幼稚園入園時の心理的な相談、過活動、自閉症、宿題のストレス、学校での暴力など、信頼できる小児科医が必要です。",
+                       "b15":"赤ちゃんの個人医師は、総合小児科専門の医師で、さまざまな小児の健康問題に対応できるよう訓練されています。予防接種や健康教育、ケガの緩和、病気の進行を遅らせたり防いだりするための予防ケアにも精通しています。",
+                       "b16":"効果的なコミュニケーション: いつでも親が必要とする際に電話やメッセージで対応することで、安心感をもたらします。",
+                       "b17":"親密な関係: 親は、赤ちゃんが18歳になるまで同じ小児科医を選ぶことができ、長期にわたる親密な関係を築く基盤となります。",
+                       "b18":"誠実で信頼できる: 医師は、年間を通じて子どもの健康ケアを提供する責任を認識し、最初から子どもの健康状態と歴史を学びます。",
+                       "b19":"忍耐と辛抱: 医師は、親が理解し、フォローできるように時間をかけて説明し、親との関係が長く続くよう努めます。",
+                       "b20":"子どもが最優先: 子どもは個人医師の常連患者リストに登録され、医師は親の心配を和らげ、子どもの健康を守るために全力を尽くします。",
+                       "reason":"大人のための個人医師を選ぶ理由",
+                       "r1":"私たちは皆、年に数回は健康管理が必要です。慢性疾患がある場合は、さらに多くのケアが必要です。体内のさまざまな問題を予測し、バランスを取りながら治療を行える個人医師のケアが求められます。",
+                       "r2":"適切な個人医師を見つけるには、現在の健康状態とニーズを考慮する必要があります。複雑なニーズや慢性疾患を抱えている人は、個人医師サービスから最も恩恵を受けるでしょう。すでに健康で医療ニーズが少ない場合でも、あなたの体調、家族の歴史、遺伝的要因を理解し、定期的な患者として見てくれる個人医師がいれば、予防ケアや健康維持のサポートを受けられます。",
+                       "r3":"他の問題に対応する個人医師パッケージもありますか？",
+                       "r4":"個別相談。",
+                       "r5":"個人医師。",
+                       "r6":"料金計算方法。",
+                       "r7":"相談時間による（10分、15分、20分、30分、40分、45分、60分/回、専門分野により異なる）。",
+                       "r8":"分単位。",
+                       "r9":"料金支払い。",
+                       "r10":"過去に相談した場合。",
+                       "r11":"年に1回。",
+                       "r12":"ケアチームサービス料金。",
+                       "r13":"コンサルティングのための固定料金。 （12ヶ月有効のメンバーシップ無料）。",
+                       "r14":"免除。",
+                       "r15":"相談時間。",
+                       "r16":"1回あたりの固定時間。 事前登録時間が切れると自動で終了。",
+                       "r17":"事前登録不要。中断なし（年間プランの制限内で）。",
+                       "r18":"電話前に予約が必要。",
+                       "r19":"最低45分-利用可能なスケジュールに基づく。",
+                       "r20":"必要時に予約不要で、医師から折り返しの電話が可能。",
+                       "r21":"カレンダー優先順位。",
+                       "r22":"優先なし。",
+                       "r23":"優先されます。",
+                       "r24":"相談前に病状を申告。",
+                       "r25":"相談前に完全な情報を要求。",
+                       "r26":"必要ありません。",
+                       "r27":"テキストメッセージによる健康の回答（知識質問／診察後の質問）。",
+                       "r28":"知識質問には治療方針や薬のアドバイスが含まれません。 診察後の質問は、最も困難な診察後の一定期間内のみ送信可能です。",
+                       "r29":"無制限。",
+                       "process":"サービスプロセス",
+                       "p1":"最初の詳細な相談。",
+                       "p2":"登録が完了すると、医師は最初の詳細な相談を行い、患者の病歴、体調、ケアのニーズを理解します。",
+                       "p3":"1年間。",
+                       "p4":"患者はテキストメッセージ（知識質問／診察後の質問）を送信したり、医師に折り返しの電話を依頼したりできます。医師は予約なしでフレキシブルに対応し、また、必要に応じて患者に自発的に連絡し、追加の情報収集やフォローアップを行います。",
+                       "p5":"延長。",
+                       "P6":"いつでも延長が可能で、旧制限の残りは新たな更新日まで引き継がれます。",
+                       "p7":"遠隔診療料金には以下が含まれます。",
+                       "p8":"1.コンサルティング料金: 年間の制限時間（分数）に対する固定料金。",
+                       "p9":"2. ケアチームサービス料金: 免除。",
+                       "p10":"ユーザーは支払い前に診療帳にお金を入金する必要があります。",
+                       "p11":"Momo電子財布、ZaloPay電子財布。",
+                       "p12":"ATMカードまたはクレジットカード、Zalopayの安全な決済ゲートウェイを使用。",
+                       "p13":"以下の銀行口座に振り込み（登録した電話番号を振込内容として記入）。",
+                       "start":"始め方",
+                       "s1":"アプリをダウンロードして、診療帳を開きます。",
+                       "s2":"アプリをダウンロードした後、ユーザーは電話番号を使って診療帳を登録し、自己および家族の情報を追加します。診療帳は家族の医療履歴を保管する場所となります。",
+                       "s3":"システムが常にサポートと接続を確実にするため、最もよく使用する電話番号で登録することをお勧めします。",
+                       "s4":"メンバーになる。",
+                       "s5":"メンバーシップパッケージに登録することで、ユーザーは知識ベース、健康管理、教育ツールにアクセスでき、各相談で無料のサービスやその他の特典が受けられます。",
+                       "s6":"個人医師はメンバー限定のサービスです。 メンバー登録時に「個人医師」を追加の特典として選択します。",
+                       "s7":"企業が従業員向けに健康特典パッケージを購入する場合。",
+                       "s8":"企業は従業員のために健康特典プログラムに登録し、従業員が世界中のどこからでも高品質な医療を受けることができ、時間と移動の手間を減らせます。",
+                       "s9":"アドバイスや見積もりを受けるには、<span class='highlight'>xinchao@healthcare.vn</span> にメールしてください。"
+
+                   }
+                  
+                };
+            
+                // Hàm để thay đổi ngôn ngữ
+                function changeLanguage(lang) {
+                  
+             document.getElementById("title").querySelector('a').innerText = translations[lang].title;
+             document.getElementById("services").querySelector('a').innerText = translations[lang].services;
+             document.getElementById("service1").innerText = translations[lang].service1;
+             document.getElementById("service2").innerText = translations[lang].service2;
+             document.getElementById("service3").innerText = translations[lang].service3;
+             document.getElementById("service4").innerText = translations[lang].service4;
+             document.getElementById("service5").innerText = translations[lang].service5;
+             document.getElementById("expert").querySelector('a').innerText =translations[lang].expert;
+             document.getElementById("expert1").innerText = translations[lang].expert1;
+             document.getElementById("expert2").innerText = translations[lang].expert2;
+             document.getElementById("expert3").innerText = translations[lang].expert3;
+             document.getElementById("community").querySelector('a').innerText = translations[lang].community
+             document.getElementById("forum").innerText = translations[lang].forum;
+             document.getElementById("support").innerText= translations[lang].support;
+             document.getElementById("about_us").querySelector('a').innerText =translations[lang].about_us;
+             document.getElementById("mission").innerText =translations[lang].mission;
+            //  document.getElementById("vision").innerText =translations[lang].vision;
+            //  document.getElementById("sologan_1").innerText=translations[lang].sologan_1;
+            //  document.getElementById("txt_1").innerHTML=translations[lang].txt_1;
+            //  document.getElementById("sologan_2").innerText=translations[lang].sologan_2;
+            //  document.getElementById("txt_2").innerHTML=translations[lang].txt_2;
+            //  document.getElementById("sologan_3").innerText=translations[lang].sologan_3;
+            //  document.getElementById("txt_3").innerHTML=translations[lang].txt_3;
+            //  document.getElementById("ND_txt_1").innerText=translations[lang].ND_txt_1;
+            //  document.getElementById("ND_txt_2").innerText=translations[lang].ND_txt_2;
+            //  document.getElementById("ND_txt_3").innerText=translations[lang].ND_txt_3;
+            //  document.getElementById("remote").innerText=translations[lang].remote;
+            //  document.getElementById("ND1").innerText=translations[lang].ND1;
+            //  document.getElementById("doctor").innerText=translations[lang].doctor;
+            //  document.getElementById("cnt").innerText=translations[lang].cnt;
+            //  document.getElementById("remote_2").innerText=translations[lang].remote_2;
+            //  document.getElementById("cnt_2").innerText=translations[lang].cnt_2;
+            //  document.getElementById("news").innerText=translations[lang].news;
+            //  document.getElementById("cnt_3").innerText=translations[lang].cnt_3;
+            //  document.getElementById("know").innerText=translations[lang].know;
+            //  document.getElementById("cnt_4").innerText=translations[lang].cnt_4;
+            //  document.getElementById("feedback").innerText=translations[lang].feedback;
+            //  document.getElementById("cmt_1").innerText=translations[lang].cmt_1;
+            //  document.getElementById("cmt_2").innerText=translations[lang].cmt_2;
+            //  document.getElementById("cmt_3").innerText=translations[lang].cmt_3;
+             document.getElementById("follow").innerText=translations[lang].follow;
+             document.getElementById("mes").innerHTML=translations[lang].mes;
+             document.getElementById("mes_1").innerText=translations[lang].mes_1;
+             document.getElementById("patients").innerText=translations[lang].patients;
+             document.getElementById("thao").innerText=translations[lang].thao;
+             document.getElementById("thuong").innerText=translations[lang].thuong;
+             document.getElementById("phuong").innerText=translations[lang].phuong;
+             document.getElementById("ngoc").innerText=translations[lang].ngoc;
+             document.getElementById("sup").innerText=translations[lang].sup;
+             document.getElementById("ques").innerText=translations[lang].ques;
+             document.getElementById("contact").innerText=translations[lang].contact;
+             document.getElementById("privacy").innerText=translations[lang].privacy;
+             document.getElementById("in4").innerText=translations[lang].in4;
+             document.getElementById("school").innerText=translations[lang].school;
+             document.getElementById("email").innerText=translations[lang].email;
+             document.getElementById("tele_1").innerText=translations[lang].tele_1;
+             document.getElementById("tele_2").innerText=translations[lang].tele_2;
+             document.getElementById("txt_4").innerText=translations[lang].txt_4;
+             document.getElementById("personal_doctor").innerText=translations[lang].personal_doctor;
+             document.getElementById("nd1").innerText=translations[lang].nd1;
+             document.getElementById("kq1").innerText=translations[lang].kq1;
+             document.getElementById("kq2").innerText=translations[lang].kq2;
+             document.getElementById("kq3").innerText=translations[lang].kq3;
+             document.getElementById("kq4").innerText=translations[lang].kq4;
+             document.getElementById("kq5").innerText=translations[lang].kq5;
+             document.getElementById("kq6").innerText=translations[lang].kq6;
+             document.getElementById("kq7").innerText=translations[lang].kq7;
+             document.getElementById("kq8").innerText=translations[lang].kq8;
+             document.getElementById("benefits").innerText=translations[lang].benefits;
+             document.getElementById("b1").innerText=translations[lang].b1;
+             document.getElementById("b2").innerText=translations[lang].b2;
+             document.getElementById("b3").innerText=translations[lang].b3;
+             document.getElementById("b4").innerText=translations[lang].b4;
+             document.getElementById("b5").innerText=translations[lang].b5;
+             document.getElementById("b6").innerText=translations[lang].b6;
+             document.getElementById("b7").innerText=translations[lang].b7;
+             document.getElementById("b8").innerText=translations[lang].b8;
+             document.getElementById("b9").innerText=translations[lang].b9;
+             document.getElementById("b10").innerText=translations[lang].b10;
+             document.getElementById("b11").innerText=translations[lang].b11;
+             document.getElementById("b12").innerText=translations[lang].b12;
+             document.getElementById("b13").innerText=translations[lang].b13;
+             document.getElementById("b14").innerText=translations[lang].b14;
+             document.getElementById("b15").innerText=translations[lang].b15;
+             document.getElementById("b16").innerText=translations[lang].b16;
+             document.getElementById("b17").innerText=translations[lang].b17;
+             document.getElementById("b18").innerText=translations[lang].b18;
+             document.getElementById("b19").innerText=translations[lang].b19;
+             document.getElementById("b20").innerText=translations[lang].b20;
+             document.getElementById("b21").innerText=translations[lang].b21;
+             document.getElementById("reason").innerText=translations[lang].reason;
+             document.getElementById("r1").innerText=translations[lang].r1;
+             document.getElementById("r2").innerText=translations[lang].r2;
+             document.getElementById("r3").innerText=translations[lang].r3;
+             document.getElementById("r4").innerText=translations[lang].r4;
+             document.getElementById("r5").innerText=translations[lang].r5;
+             document.getElementById("r6").innerText=translations[lang].r6;
+             document.getElementById("r7").innerText=translations[lang].r7;
+             document.getElementById("r8").innerText=translations[lang].r8;
+             document.getElementById("r9").innerText=translations[lang].r9;
+             document.getElementById("r10").innerText=translations[lang].r10;
+             document.getElementById("r11").innerText=translations[lang].r11;
+             document.getElementById("r12").innerText=translations[lang].r12;
+             document.getElementById("r13").innerText=translations[lang].r13;
+             document.getElementById("r14").innerText=translations[lang].r14;
+             document.getElementById("r15").innerText=translations[lang].r15;
+             document.getElementById("r16").innerText=translations[lang].r16;
+             document.getElementById("r17").innerText=translations[lang].r17;
+             document.getElementById("r18").innerText=translations[lang].r18;
+             document.getElementById("r19").innerText=translations[lang].r19;
+             document.getElementById("r20").innerText=translations[lang].r20;
+             document.getElementById("r21").innerText=translations[lang].r21;
+             document.getElementById("r22").innerText=translations[lang].r22;
+             document.getElementById("r23").innerText=translations[lang].r23;
+             document.getElementById("r24").innerText=translations[lang].r24;
+             document.getElementById("r25").innerText=translations[lang].r25;
+             document.getElementById("r26").innerText=translations[lang].r26;
+             document.getElementById("r27").innerText=translations[lang].r27;
+             document.getElementById("r28").innerText=translations[lang].r28;
+             document.getElementById("r29").innerText=translations[lang].r29;
+             document.getElementById("process").innerText=translations[lang].process;
+             document.getElementById("p1").innerText=translations[lang].p1;
+             document.getElementById("p2").innerText=translations[lang].p2;
+             document.getElementById("p3").innerText=translations[lang].p3;
+             document.getElementById("p4").innerText=translations[lang].p4;
+             document.getElementById("p5").innerText=translations[lang].p5;
+             document.getElementById("p6").innerText=translations[lang].p6;
+             document.getElementById("p7").innerText=translations[lang].p7;
+             document.getElementById("p8").innerText=translations[lang].p8;
+             document.getElementById("p9").innerText=translations[lang].p9;
+             document.getElementById("p10").innerText=translations[lang].p10;
+             document.getElementById("p11").innerText=translations[lang].p11;
+             document.getElementById("p12").innerText=translations[lang].p12;
+             document.getElementById("p13").innerText=translations[lang].p13;
+             document.getElementById("p14").innerText=translations[lang].p14;
+             document.getElementById("start").innerText=translations[lang].start;
+             document.getElementById("s1").innerText=translations[lang].s1;
+             document.getElementById("s2").innerHTML=translations[lang].s2;
+             document.getElementById("s3").innerText=translations[lang].s3;
+             document.getElementById("s4").innerText=translations[lang].s4;
+             document.getElementById("s5").innerHTML=translations[lang].s5
+             document.getElementById("s6").innerText=translations[lang].s6;
+             document.getElementById("s7").innerText=translations[lang].s7;
+             document.getElementById("s8").innerText=translations[lang].s8;
+             document.getElementById("s9").innerHTML=translations[lang].s9;
+             document.getElementById("s10").innerText=translations[lang].s10;
+             
+            
+
+
+          }
+              window.onload =function(){
+                  let savedLang =localStorage.getItem('language');
+                  if(savedLang){
+                      changeLanguage(savedLang);
+                  }
+              };
+  
+          </script>
+           </nav>
+        </header>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.sub-menu').parent('li').addClass('has-child');
+        });
+    </script>
+<img src="media/anh1.png" alt="Health Service" class="responsive-image">
+<div class="chu2">
+    <p id="1">Có một bác sĩ riêng cho người ta thương yêu - giờ đây không còn là điều xa xỉ của các gia đình Việt</p>
+</div>
+<main>
+<div class="chu3">
+    <p id="1">BÁC SĨ RIÊNG</p>
+</div>
+</main>
+<div class="div-container">
+  <img src="media/anh3.jpg" alt="anh3" width="700px" height="400px">
+</div>
+<p id="1" style="text-align: center; padding: 5px; color:rgba(75, 73, 73, 0.61);">Được một bác sĩ hiểu mình và chăm sóc sức khỏe thường xuyên cho mình, là điều vô giá!</p>
+<ul>
+<li id="1">Bác sĩ riêng là bác sĩ được chỉ định để chăm sóc người bệnh nặng ( thang điểm từ 13 đến 19 hoặc từ 20 đến 72 ) với tư vấn 1-1.</li>
+</ul>
+<div class="chu3">
+  <p id="1">LÍ DO CẦN BÁC SĨ RIÊNG</p>
+</div>
+<div class="div-container">
+<img src="media/anh4.jpg" alt="anh4" width="700px" height="400px">
+</div>
+<P id="1" style="text-indent:10px; text-align: center; padding: 5px; color:rgba(75, 73, 73, 0.61);">Được chăm sóc bởi một bác sĩ riêng - người hiểu mình nhất.</P>
+<ul>
+  <li id="1">Lý do cần bác sĩ riêng: Những người thiếu tự tin hoặc có ít người để chia sẻ rất cần sự hỗ trợ từ bác sĩ riêng để thoải mái nói về bệnh tật hoặc tâm lý, và nhận được tư vấn bất kỳ lúc nào.</li>
+</ul>
+<div class="chu3">
+  <p id="1">CHI PHÍ VÀ HƯỚNG DẪN THANH TOÁN:</p>
+</div>
+<UL>
+  <LI>Có thể Thanh toán qua ví điện tử (Momo, ZaloPay), thẻ tín dụng,</LI>
+</UL>
+<img src="media/anh2.png" alt="Health Service" class="responsive-image">
+<div class="chu3">
+  <P id="1">HƯỚNG GIẢI QUYẾT VẤN ĐỀ THIẾU TỰ TIN VÀ NGƯỜI CÓ ÍT BẠN BÈ ĐỂ CHIA SẺ</P>
+</div>
+<ul>
+  <li>Bác sĩ riêng giúp những người thiếu tự tin lấy lại sự tự tin.</li>
+  <li>Cung cấp tư vấn cho những ai có ít người để chia sẻ.</li>
+  <LI>Ngoài ra, cũng có thể trò chuyện qua diễn đàn.</LI>
+</ul>
+<table style="padding:10px; border: 1px solid black; border-collapse: collapse;">
+  <caption id="1" style="caption-side: top; text-align: center; font-size: 24px; font-weight: bold;">Bảng so sánh</caption>
+  <thead>
+    <tr>
+      <th id="1" style="border: 1px solid black; padding: 10px;">Nội dung</th>
+      <th id="1" style="border: 1px solid black; padding: 10px;">Tư vấn lẻ</th>
+      <th id="1" style="border: 1px solid black; padding: 10px;">Hội viên</th>
+      <th id="1" style="border: 1px solid black; padding: 10px;">Sinh viên</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td id="1" style="border: 1px solid black; padding: 10px;">Cách tính phi</td>
+      <td id="1" style="border: 1px solid black; padding: 10px;">-Theo phiên tư vấn (10 -15 - 20 - 30 - 40 - 45 - 60 phút/phiên tùy từng chuyên khoa</td>
+      <td id="1" style="border: 1px solid black; padding: 10px;">- Theo phút</td>
+      <td id="1" style="border: 1px solid black; padding: 10px;">- Theo phiên(giảm 50% phí)</td>
+    </tr>
+    <tr>
+      <td id="1" style="border: 1px solid black; padding: 10px;">Đóng phí</td>
+      <td id="1" style="border: 1px solid black; padding: 10px;">- Từng lần tư vấn</td>
+      <td id="1" style="border: 1px solid black; padding: 10px;">- Một lần cả năm</td>
+      <td id="1" style="border: 1px solid black; padding: 10px;">- Từng lần tư vấn</td>
+    </tr>
+    <tr>
+      <td id="1" style="border: 1px solid black; padding: 10px;">Phí dịch vụ careteam</td>
+      <td id="1" style="border: 1px solid black; padding: 10px;">- Một mức phí cố định cho từng lần tư vấn. (Người dùng có gói thành viên được miễn trong 12 tháng hiệu lực)</td>
+      <td id="1" style="border: 1px solid black; padding: 10px;">- Được miễn</td>
+      <td id="1" style="border: 1px solid black; padding: 10px;">-Giảm 70% phí cho từng lần tư vấn</td>
+    </tr>
+    <tr>
+      <td id="1" style="border: 1px solid black; padding: 10px;">Thời lượng tư vấn</td>
+      <td id="1" style="border: 1px solid black; padding: 10px;">- Số phút cố định mỗi phiên Tự động ngắt khi hết số phút đăng ký trước</td>
+      <td id="1" style="border: 1px solid black; padding: 10px;">- Không cần đăng ký trước Không ngắt (trong hạn mức gói của cả năm)</td>
+      <td id="1" style="border: 1px solid black; padding: 10px;">- Giống đặc quyền của Hội viên</td>
+    </tr>
+    <tr>
+      <td id="1" style="border: 1px solid black; padding: 10px;">Yêu cầu đặt hẹn trước khi gọi</td>
+      <td id="1" style="border: 1px solid black; padding: 10px;">- 	Tối thiểu 45 phút - theo lịch trống có sẵn</td>
+      <td id="1" style="border: 1px solid black; padding: 10px;">- Không cần đặt hẹn Bác sĩ gọi lại khi có yêu cầu</td>
+      <td id="1" style="border: 1px solid black; padding: 10px;">- Có thể đặt lịch trước cho bác sĩ(ưu tiên sinh viên)</td>
+    </tr>
+    <tr>
+      <td id="1" style="border: 1px solid black; padding: 10px;">Ưu tiên xếp lịch</td>
+      <td id="1" style="border: 1px solid black; padding: 10px;">- Không ưu tiên</td>
+      <td id="1" style="border: 1px solid black; padding: 10px;">- Được ưu tiên</td>
+      <td id="1" style="border: 1px solid black; padding: 10px;">- Được ưu tiên</td>
+    </tr>
+    <tr>
+      <td id="1" style="border: 1px solid black; padding: 10px;">Khai bệnh trước khi tư vấn</td>
+      <td id="1" style="border: 1px solid black; padding: 10px;">- Yêu cầu cung cấp đầy đủ trước khi tư vấn</td>
+      <td id="1" style="border: 1px solid black; padding: 10px;">- Không yêu cầum</td>
+      <td id="1" style="border: 1px solid black; padding: 10px;">- Yêu cầu cung cấp đầy đủ trước khi tư vấn</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+    <p id="1">References</p>
+</div>
+<p>1.Gonzalez, P. (2019, August 19). Why do you need a primary care physician? Harvard Health Blog. Retrieved May 7, 2024, from</p><br>
+<span class="highlight">2.https://www.health.harvard.edu/blog/why-do-you-need-a-primary-care-physician-2019081917527</span></p>
+<p><span class="highlight">3.https://www.academicpeds.org</span></p>
+<p><span class="highlight">4.https://centerforpediatricmedct.com</span></p>
+<p><span class="highlight">5.https://kidshealth.org</span></p>
+  <!-- Footer -->
+  <footer class="text-center text-lg-start bg-body-tertiary text-muted">
+    <!-- Section: Social media -->
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+      <!-- Left -->
+      <div class="me-5 d-none d-lg-block">
+        <span><p id="follow">Theo dõi chúng tôi qua :</p></span>
+      </div>
+      <!-- Left -->
+  
+      <!-- Right -->
+      <div>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-google"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
+  
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              <img src="Media/logo.svg" alt="" srcset=""width="50px"> Health Care
+            </h6>
+            <p id="mes">
+             <span style="color: rgb(11, 196, 134);"> Đối tác sức khỏe TIN CẬY</span><br>
+              <P id="mes_1">Chúng tôi giúp bạn duy trì một lối sống lành mạnh, và khi bạn cần tham vấn y tế, chúng tôi kết nối bạn với những bác sĩ chuyên khoa hàng đầu qua gọi thoại và gọi video.</P>
+            </p>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              <p id="patients">Dành cho bệnh nhân</p>
+            </h6>
+            <p id="thao">
+              <a href="#!" class="text-reset" style="text-decoration: none;"><span>Dịch vụ</span></a>
+            </p>
+            <p id="thuong">
+              <a href="#!" class="text-reset" style="text-decoration: none;"><span>Cẩm nang</span></a>
+            </p>
+            <p id="phuong">
+              <a href="#!" class="text-reset" style="text-decoration: none;"><span>Blog sống khỏe</span></a>
+            </p>
+            <p id="ngoc">
+              <a href="#!" class="text-reset" style="text-decoration: none;"><span>Chương trình thành viên</span></a>
+            </p>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              <p id="sup">Hỗ trợ</p>
+            </h6>
+            <p id="ques">
+              <a href="#!" class="text-reset" style="text-decoration: none;"><span>Câu hỏi thường gặp</span></a>
+            </p>
+            <p id="contact">
+              <a href="#!" class="text-reset" style="text-decoration: none;"><span>Liên hệ</span></a>
+            </p>
+            <p id="privacy">
+              <a href="#!" class="text-reset" style="text-decoration: none;"><span>Chính sách bảo mật</span></a>
+            </p>
+            
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4"><p id="in4">Thông tin</p></h6>
+            <p id="school"><i class="fas fa-home me-3"></i> Đại học Phương Đông (CS2), Minh Khai, Hai Bà Trưng, Hà Nội </p>
+            <p id="email">
+              <i class="fas fa-envelope me-3"></i>
+              tranducson2134@gmail.com
+            </p>
+            <p id="tele_1"><i class="fas fa-phone me-3"></i> + 84 559 174 159</p>
+            <p id="tele_2"><i class="fas fa-print me-3"></i> + 84 234 567 89</p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+      © 2024 Copyright:
+      <a class="text-reset fw-bold" href="https://mdbootstrap.com/"><p id="group">Group 5</p></a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+ 
+</body>
+</html>
+
