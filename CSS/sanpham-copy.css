@@ -1,20 +1,11 @@
-* {
-    padding: 0;
-    margin: 0;
-}
-#wrapper {
+
+#wrapper_1 {
     max-width: 1180px;
     margin: 0 auto;
     padding: 1px;
     border-radius: 0 0 14px 14px;
     background-color: #F9D55C;
 
-}
-body {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
-    line-height: 1.15;
-    color: #333;
 }
 
 

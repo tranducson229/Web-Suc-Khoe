@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="CSS/css/all.css">
+    <link rel="stylesheet" href="CSS/WebSucKhoe.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">   
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<style>
+    
+ *{
+            margin:0;
+            padding: 0;
+            box-sizing: border-box;
+            
+        }
+        #wrapper{
+            position: relative;
+            left:0;
+            right: 0;
+            z-index: 1000;
+            
+        }
+        .header{
+            background-color:#fff;
+        }
+        .container{
+            max-width: 1500px;
+            margin: 0 auto;
+        }
+        nav{
+            display: flex;
+            justify-content:space-around;
+        }
+        #main-menu{
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            font-size: 20px;
+        }
+        #main-menu li{
+            position: relative;
+            display: inline-block;
+        }
+        #main-menu li a{
+            color:#333;
+            display: block;
+            text-decoration: none;
+            padding: 18px 20px;
+        }
+        #main-menu ul.sub-menu{
+            position: absolute;
+            background: #ffffffab;
+            padding: 15px 0px;
+            list-style: none;
+            width: 200px;
+            border:1px solid #333;
+            display: none;
+        }
+        #main-menu li:hover>ul.sub-menu{
+            display: block;
+        }
+        #main-menu ul.sub-menu a{
+            padding: 8px 15px;
+            border-bottom: 1px solid #8d8a8a;
+            left:0;
+        }
+        #main-menu ul.sub-menu li a{
+            color:#333;
+        }
+        #main-menu ul.sub-menu li:hover>a{
+            border-bottom: 1px solid #474746;
+            box-shadow: rgba(148, 241, 120, 0.4) -5px 5px, rgba(148, 184, 66, 0.3) -10px 10px;
+            border-radius: 10px;
+        }
+        #main-menu ul.sub-menu li:last-child a{
+            border-bottom:none;
+        }
+        #main-menu>li>a{
+            position: relative;
+        }
+        #main-menu>li>a::before{
+            content: "";
+            height: 4px;
+            width: 0px;
+            background: rgb(81, 233, 64);
+            position: absolute;
+            bottom: 0px;
+            transition: 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+        #main-menu>li:hover>a::before{
+            width: 100%;
+            left: 0px;
+        }
+        #main-menu>li.has-child::after{
+            font-family:"Font Awesome 5 Free"; 
+            font-weight:600; 
+            content:"\f107";
+            color: #333;
+            position: absolute;
+            top:0px;
+            right: 0px;
+            padding: 18px 0px;
+        }
+        #main-menu .sub-menu>li.has-child::after{
+            font-family:"Font Awesome 5 Free";
+            font-weight:600; 
+            content:"\f105";
+            color: #333;
+            position: absolute;
+            top:0px;
+            right: 10px;
+            padding: 8px 0px;
+        }
+        #main-menu .sub-menu>li.has-child :hover::after{
+            color:rgba(255, 255, 255, 0.61);
+        }
+        .language-switcher {
+            position: relative;
+            display: inline-block;
+            padding-top: 20px;
+            margin-left: 15px;
+        }
+
+        .language-icon {
+            font-size: 30px; /* Kích thước biểu tượng địa cầu */
+            cursor: pointer;
+            
+        }
+
+        .language-dropdown {
+            display: none;
+            position: absolute;
+            top: 55px;
+            left: 13.5px;
+            background-color: white;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 4px;
+            width: 120px; /* Chiều rộng của dropdown */
+        }
+
+        .language-dropdown button {
+            color: black;
+            padding: 10px; /* Điều chỉnh padding */
+            text-decoration: none;
+            display: flex; /* Sử dụng flexbox */
+            justify-content: center; /* Căn giữa theo chiều ngang */
+            align-items: center; /* Căn giữa theo chiều dọc */
+            font-size: 16px; /* Điều chỉnh kích thước chữ */
+            text-align: center; /* Căn giữa chữ theo chiều ngang */
+            width: 100%; /* Chiều rộng của từng phần tử */
+            height: 40px; /* Chiều cao cố định cho từng nút */
+            box-sizing: border-box; /* Đảm bảo padding không ảnh hưởng đến chiều rộng */
+            border: 1px solid black; /* Thêm viền đen (như trong hình) */
+        }
+
+        .language-dropdown a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .language-switcher:hover .language-dropdown {
+            display: block;
+        }
+       
+.login-button {
+    display: inline-block;
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient màu sắc */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Hiệu ứng bóng mờ */
+    transition: all 0.3s ease;
+    font-size: 16px;
+    text-align: center;
+}
+
+.login-button:hover {
+    background: linear-gradient(135deg, #2575fc, #92d67d); 
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3); 
+    transform: scale(1.05); 
+}
+.wrap{
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 1px;
+    border-radius: 0 0 14px 14px;
+    background-color: #f5f5f5;
+    height: auto;
+    
+}
+
+h3 {
+    text-transform: uppercase;
+    font-size: 18px;
+    color: #111;
+    padding: 10px 20px;
+    border: 1px solid #bebebe;
+    display: inline-block;
+    color: #555;
+    margin: auto;
+}
+
+ul.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+}
+ul.products li img {
+    max-width: 100%;
+    height: auto;
+}
+ul.products li {
+    flex-basis: 25%;
+    padding-left: 5px;
+    padding-right: 5px;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+}
+.product-info {
+    padding-left: 20px;
+}
+.buy-now{
+    padding-left: 35px;
+}
+ul.products li .product-info a {
+    display: block;
+    text-decoration: none;
+}
+ul.products li .product-info a.product-cat {
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #9e9e9e;
+    padding: 3px 0;
+}
+ul.products li .product-info a.product-name {
+    color:#333;
+    padding: 3px 0px;
+}
+ul.products li .product-info .product-price {
+    color: #111;
+    padding: 2px 0px;
+    font-weight: 600;
+}
+ul.products li .product-top a.buy-now {
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    display: block;
+    background-color: #446084;
+    color: #fff;
+    padding: 10px 0px;
+    position: absolute;
+    width: 83%;
+    bottom: -39px;
+    transition: 0.25s ease-in-out;
+    opacity: 0.9;
+}
+ul.products li .product-top .thumb img{
+    display: block;
+}
+ul.products li .product-top .thumb{
+    display: block;
+}
+ul.products li .product-top{
+    position: relative;
+    overflow: hidden;
+}
+ul.products li :hover a.buy-now {
+    bottom: 0px;
+
+}
+ul.products li :hover .product-top .product-thumb img{
+    filter: opacity(85%);
+}
+.doctor-list-box {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center; /* Căn giữa nội dung bên trong khung */
+    font-weight: bold;
+    font-size: 16px;
+}
+
+
+    </style>
+</style>
+<body>
+    <div id="wrapper">
+        <div class="header">
+           <nav class="container">
+            <a href="Web_Suc_Khoe.html" id="logo" style="text-decoration: none;color:#474746;">
+                <img src="Media/logo.svg" alt="" srcset="" style="width: 15%;"> HEALTH CARE
+                
+            </a>
+            <ul id="main-menu">
+                <li id="title"><a href="Web_Suc_Khoe.html">Trang chủ</a></li>
+                <li id="services" class="has-child">
+                    <a href="#">Dịch vụ</a>
+                    <ul class="sub-menu">
+                        <li><a id="service4" href="face_form.html">Kiểm tra tâm lý</a></li>
+                        <li><a id="service2" href="Tuvantrilieutamly.html">Tư vấn trị liệu tâm lý</a></li>
+                        <li><a id="service3" href="khamtuxa.html">Khám từ xa</a></li>
+                        <li><a id="service1" href="Bacsirieng.html">Bác sĩ riêng</a></li>
+                        
+                    </ul>
+                </li>
+            
+                <li id="expert">
+                 <a href="">Chuyên gia</a>
+                    <ul class="sub-menu">
+                        <li><a id="expert1"href="">Danh sách</a></li>
+                        <li><a id="expert2"href="">Chuyên gia tư vấn trực tiếp</a></li>
+                         <li><a id="expert3"href="">Đặt hẹn</a></li>
+                    </ul>
+              </li>
+              <li id="community">
+                <a  href="">Cộng đồng</a>
+                    <ul class="sub-menu">
+                        <li><a id ="forum" href="">Diễn đàn</a></li>
+                        <li><a id ="support" href="">Hỗ trợ</a></li>
+                    </ul>
+                </li>
+              <li id="about_us">
+                <a href="">Về chúng tôi</a>
+                    <ul class="sub-menu">
+                        <li><a id="mission" href="">Sứ mệnh</a></li>
+                        <li><a id="vision"href="">Tầm nhìn phát triển</a></li>
+                    </ul>
+            </li>
+            <div class="login">
+                <!-- Biểu tượng địa cầu -->
+             
+        
+                <!-- Danh sách ngôn ngữ -->
+                <div class="language-dropdown">
+                   <a href=""></a>
+                </div>
+            </div>
+            <div class="language-switcher">
+                <!-- Biểu tượng địa cầu -->
+                <i class="fa-solid fa-earth-americas fa-xl" ></i>
+        
+                <!-- Danh sách ngôn ngữ -->
+                <div class="language-dropdown">
+                    <button onclick="changeLanguage('en')">English</button>
+                    <button onclick="changeLanguage('vi')">Tiếng Việt</button>
+                    <button onclick="changeLanguage('jp')">日本語</button>
+                </div>
+            </div>
+            <div class="login" style="padding: 10px;">
+                <!-- Nút Đăng nhập -->
+                <a href="login.html" class="login-button">Đăng nhập</a>
+             </div>
+             
+        </nav>
+        
+    </div>
+    <div class="doctor-list-box" >
+        LIST BÁC SĨ RIÊNG<br>   
+        <img src="Media/bs_banner.jpeg" alt="">
+    </div>
+    
+    <div class="wrap" >
+    
+    <ul class="products">
+        <li>
+            <div class="product-item">
+                <div class="product-top">
+                    <a href="" class="product-thumb">
+                        <img src="Media/bs1.jpg" alt="" srcset="">
+                    </a>
+                    <a href="" class="buy-now">Xem thông tin</a>
+                    <!--Mua ngay-->
+                 </div>
+                <div class="product-info">
+                    <a href="" class="product-cat">Bác sĩ</a>
+                    <a href="" class="product-name">Tâm lý</a>
+                    
+                      
+                </div>
+             </div>
+        </li>
+
+        <li>
+            <div class="product-item">
+                <div class="product-top">
+                    <a href="" class="product-thumb">
+                        <img src="Media/bs2.jpg" alt="" srcset="">
+                    </a>
+                    <a href="" class="buy-now">Xem thông tin</a>
+                    <!--Mua ngay-->
+                 </div>
+                <div class="product-info">
+                    <a href="" class="product-cat">Bác sĩ</a>
+                    <a href="" class="product-name">Tâm lý</a>
+                    
+                      
+                </div>
+             </div>
+        </li>
+
+        <li>
+            <div class="product-item">
+                <div class="product-top">
+                    <a href="" class="product-thumb">
+                        <img src="Media/bs3.jpg" alt="" srcset="">
+                    </a>
+                    <a href="" class="buy-now">Xem thông tin</a>
+                    <!--Mua ngay-->
+                 </div>
+                <div class="product-info">
+                    <a href="" class="product-cat">Bác sĩ</a>
+                    <a href="" class="product-name">Tâm lý</a>
+                    
+                      
+                </div>
+             </div>
+        </li>
+
+        <li>
+            <div class="product-item">
+                <div class="product-top">
+                    <a href="" class="product-thumb">
+                        <img src="Media/bs4.jpg" alt="" srcset="">
+                    </a>
+                    <a href="" class="buy-now">Xem thông tin</a>
+                    <!--Mua ngay-->
+                 </div>
+                <div class="product-info">
+                    <a href="" class="product-cat">Bác sĩ</a>
+                    <a href="" class="product-name">Tâm lý</a>
+                    
+                      
+                </div>
+             </div>
+        </li>
+
+        <li>
+            <div class="product-item">
+                <div class="product-top">
+                    <a href="" class="product-thumb">
+                        <img src="Media/bs5.jpg" alt="" srcset="">
+                    </a>
+                    <a href="" class="buy-now">Xem thông tin</a>
+                    <!--Mua ngay-->
+                 </div>
+                <div class="product-info">
+                    <a href="" class="product-cat">Bác sĩ</a>
+                    <a href="" class="product-name">Tâm lý</a>
+                    
+                      
+                </div>
+             </div>
+        </li>
+
+        <li>
+            <div class="product-item">
+                <div class="product-top">
+                    <a href="" class="product-thumb">
+                        <img src="Media/bs6.jpg" alt="" srcset="">
+                    </a>
+                    <a href="" class="buy-now">Xem thông tin</a>
+                    <!--Mua ngay-->
+                 </div>
+                <div class="product-info">
+                    <a href="" class="product-cat">Bác sĩ</a>
+                    <a href="" class="product-name">Tâm lý</a>
+                    
+                      
+                </div>
+             </div>
+        </li>
+
+        <li>
+            <div class="product-item">
+                <div class="product-top">
+                    <a href="" class="product-thumb">
+                        <img src="Media/bs7.jpg" alt="" srcset="">
+                    </a>
+                    <a href="" class="buy-now">Xem thông tin</a>
+                    <!--Mua ngay-->
+                 </div>
+                <div class="product-info">
+                    <a href="" class="product-cat">Bác sĩ</a>
+                    <a href="" class="product-name">Tâm lý</a>
+                    
+                      
+                </div>
+             </div>
+        </li>
+
+        <li>
+            <div class="product-item">
+                <div class="product-top">
+                    <a href="" class="product-thumb">
+                        <img src="Media/bs8.jpg" alt="" srcset="">
+                    </a>
+                    <a href="" class="buy-now">Xem thông tin</a>
+                    <!--Mua ngay-->
+                 </div>
+                <div class="product-info">
+                    <a href="" class="product-cat">Bác sĩ</a>
+                    <a href="" class="product-name">Tâm lý</a>
+                    
+                      
+                </div>
+             </div>
+        </li>
+    </ul>
+</div>
+ <!-- Footer -->
+ <footer class="text-center text-lg-start bg-body-tertiary text-muted">
+    <!-- Section: Social media -->
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+      <!-- Left -->
+      <div class="me-5 d-none d-lg-block">
+        <span><p id="follow">Theo dõi chúng tôi qua :</p></span>
+      </div>
+      <!-- Left -->
+  
+      <!-- Right -->
+      <div>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-google"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
+  
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              <img src="Media/logo.svg" alt="" srcset=""width="50px"> Health Care
+            </h6>
+            <p id="mes">
+             <span style="color: rgb(11, 196, 134);"> Đối tác sức khỏe TIN CẬY</span><br>
+              <P id="mes_1">Chúng tôi giúp bạn duy trì một lối sống lành mạnh, và khi bạn cần tham vấn y tế, chúng tôi kết nối bạn với những bác sĩ chuyên khoa hàng đầu qua gọi thoại và gọi video.</P>
+            </p>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              <p id="patients">Dành cho bệnh nhân</p>
+            </h6>
+            <p id="thao">
+              <a href="#!" class="text-reset" style="text-decoration: none;"><span>Dịch vụ</span></a>
+            </p>
+            <p id="thuong">
+              <a href="#!" class="text-reset" style="text-decoration: none;"><span>Cẩm nang</span></a>
+            </p>
+            <p id="phuong">
+              <a href="#!" class="text-reset" style="text-decoration: none;"><span>Blog sống khỏe</span></a>
+            </p>
+            <p id="ngoc">
+              <a href="#!" class="text-reset" style="text-decoration: none;"><span>Chương trình thành viên</span></a>
+            </p>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              <p id="sup">Hỗ trợ</p>
+            </h6>
+            <p id="ques">
+              <a href="#!" class="text-reset" style="text-decoration: none;"><span>Câu hỏi thường gặp</span></a>
+            </p>
+            <p id="contact">
+              <a href="#!" class="text-reset" style="text-decoration: none;"><span>Liên hệ</span></a>
+            </p>
+            <p id="privacy">
+              <a href="#!" class="text-reset" style="text-decoration: none;"><span>Chính sách bảo mật</span></a>
+            </p>
+            
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4"><p id="in4">Thông tin</p></h6>
+            <p id="school"><i class="fas fa-home me-3"></i> Đại học Phương Đông (CS2), Minh Khai, Hai Bà Trưng, Hà Nội </p>
+            <p id="email">
+              <i class="fas fa-envelope me-3"></i>
+              tranducson2134@gmail.com
+            </p>
+            <p id="tele_1"><i class="fas fa-phone me-3"></i> + 84 559 174 159</p>
+            <p id="tele_2"><i class="fas fa-print me-3"></i> + 84 234 567 89</p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+      © 2024 Copyright:
+      <a class="text-reset fw-bold" href="https://mdbootstrap.com/"><p id="group">Group 5</p></a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+</div>
+
+</body>
+</html>

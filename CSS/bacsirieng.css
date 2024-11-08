@@ -1,110 +1,155 @@
-
-
-#wrapper {
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#wrapper{
     position: fixed;
-    left: 0;
+    left:0;
     right: 0;
     z-index: 1000;
 }
-
-.header {
-    background-color: #fff;
+.header{
+    background-color:#fff;
 }
-
-.container {
+.container{
     max-width: 1500px;
     margin: 0 auto;
 }
-
-nav {
+nav{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content:space-around;
 }
-
-#main-menu {
+#main-menu{
     display: flex;
     list-style: none;
+    margin: 0;
+    padding: 0;
     font-size: 20px;
 }
-
-#main-menu li {
+#main-menu li{
     position: relative;
+    display: inline-block;
 }
-
-#main-menu li a {
-    color: #333;
+#main-menu li a{
+    color:#333;
+    display: block;
     text-decoration: none;
     padding: 18px 20px;
-    display: block;
 }
-
-#main-menu ul.sub-menu {
+#main-menu ul.sub-menu{
     position: absolute;
-    background: rgba(255, 255, 255, 0.67);
+    background: #ffffffab;
+    padding: 15px 0px;
     list-style: none;
-    padding: 15px 0;
     width: 200px;
-    border: 1px solid #333;
+    border:1px solid #333;
     display: none;
 }
-
-#main-menu li:hover > ul.sub-menu {
+#main-menu li:hover>ul.sub-menu{
     display: block;
 }
-
-#main-menu ul.sub-menu li a {
+#main-menu ul.sub-menu a{
     padding: 8px 15px;
-    color: #333;
     border-bottom: 1px solid #8d8a8a;
+    left:0;
 }
-
-#main-menu ul.sub-menu li:hover > a {
+#main-menu ul.sub-menu li a{
+    color:#333;
+}
+#main-menu ul.sub-menu li:hover>a{
     border-bottom: 1px solid #474746;
     box-shadow: rgba(148, 241, 120, 0.4) -5px 5px, rgba(148, 184, 66, 0.3) -10px 10px;
     border-radius: 10px;
 }
-
-#main-menu ul.sub-menu li:last-child a {
-    border-bottom: none;
+#main-menu ul.sub-menu li:last-child a{
+    border-bottom:none;
 }
-
-#main-menu > li > a::before {
+#main-menu>li>a{
+    position: relative;
+}
+#main-menu>li>a::before{
     content: "";
     height: 4px;
-    width: 0;
+    width: 0px;
     background: rgb(81, 233, 64);
     position: absolute;
-    bottom: 0;
-    left: 0;
-    transition: width 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
+    bottom: 0px;
+    transition: 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
-
-#main-menu > li:hover > a::before {
+#main-menu>li:hover>a::before{
     width: 100%;
+    left: 0px;
 }
-
-#main-menu > li.has-child::after {
-    font-family: "Font Awesome 5 Free";
-    font-weight: 600;
-    content: "\f107";
+#main-menu>li.has-child::after{
+    font-family:"Font Awesome 5 Free"; 
+    font-weight:600; 
+    content:"\f107";
     color: #333;
     position: absolute;
-    top: 0;
-    right: 0;
-    padding: 18px 0;
+    top:0px;
+    right: 0px;
+    padding: 18px 0px;
 }
-
-#main-menu .sub-menu > li.has-child::after {
-    content: "\f105";
+#main-menu .sub-menu>li.has-child::after{
+    font-family:"Font Awesome 5 Free";
+    font-weight:600; 
+    content:"\f105";
+    color: #333;
     position: absolute;
-    top: 0;
+    top:0px;
     right: 10px;
-    padding: 8px 0;
+    padding: 8px 0px;
+}
+#main-menu .sub-menu>li.has-child :hover::after{
+    color:rgba(255, 255, 255, 0.61);
+}
+.language-switcher {
+    position: relative;
+    display: inline-block;
+    padding-top: 20px;
+    margin-left: 15px;
 }
 
-#main-menu .sub-menu > li:hover::after {
-    color: rgba(255, 255, 255, 0.61);
+.language-icon {
+    font-size: 30px; /* Kích thước biểu tượng địa cầu */
+    cursor: pointer;
+    
+}
+
+.language-dropdown {
+    display: none;
+    position: absolute;
+    top: 55px;
+    left: 13.5px;
+    background-color: white;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 4px;
+    width: 120px; /* Chiều rộng của dropdown */
+}
+
+.language-dropdown button {
+    color: black;
+    padding: 10px; /* Điều chỉnh padding */
+    text-decoration: none;
+    display: flex; /* Sử dụng flexbox */
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    font-size: 16px; /* Điều chỉnh kích thước chữ */
+    text-align: center; /* Căn giữa chữ theo chiều ngang */
+    width: 100%; /* Chiều rộng của từng phần tử */
+    height: 40px; /* Chiều cao cố định cho từng nút */
+    box-sizing: border-box; /* Đảm bảo padding không ảnh hưởng đến chiều rộng */
+    border: 1px solid black; /* Thêm viền đen (như trong hình) */
+}
+
+.language-dropdown a:hover {
+    background-color: #f1f1f1;
+}
+
+.language-switcher:hover .language-dropdown {
+    display: block;
 }
 
 .chu1 {
@@ -131,27 +176,27 @@ nav {
     max-height: 500px; /* Giới hạn chiều cao tối đa của ảnh */
 }
 
-.chu3 {
+/* .chu3 {
     margin-top: 50px;
     font-size: 40px;
     font-weight: bold;
     color: #222020;
 }
 ul {
-    list-style-type: disc; /* Đảm bảo hiện dấu chấm tròn */
-    margin-left: 20px; /* Khoảng cách lùi vào của danh sách */
-    padding-left: 20px; /* Đảm bảo khoảng cách đồng đều giữa các mục */
-    font-size: 18px; /* Tăng kích thước chữ cho danh sách */
+    list-style-type: disc; 
+    margin-left: 20px; 
+    padding-left: 20px; 
+    font-size: 18px; 
 }
 
 li {
-    margin-bottom: 20px; /* Tăng khoảng cách giữa các mục */
-    line-height: 1.6; /* Tăng khoảng cách giữa các dòng để dễ đọc hơn */
+    margin-bottom: 20px; 
+    line-height: 1.6; 
 }
 
 p {
-    font-size: 20px; /* Kích thước chữ cho đoạn văn trước danh sách */
-    margin-bottom: 15px; /* Khoảng cách giữa đoạn văn và danh sách */
+    font-size: 20px;
+    margin-bottom: 15px;
 }
 table {
     width: 100%;
@@ -186,7 +231,7 @@ tbody tr:nth-child(even) {
 
 tbody tr:hover {
     background-color: #f1f1f1;
-}
+} */
 
 caption {
     font-size: 24px;
