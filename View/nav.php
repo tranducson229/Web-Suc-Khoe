@@ -1,4 +1,6 @@
-
+<link rel="stylesheet" href="../CSS/all.css">
+<style>
+   
  *{
             margin:0;
             padding: 0;
@@ -175,3 +177,89 @@
 
 
     
+</style>
+<div id="wrapper">
+        <div class="header">
+           <nav class="container">
+            <a href="Web_Suc_Khoe.html" id="logo" style="text-decoration: none;color:#474746;">
+                <img src="../Media/logo.svg" alt="" srcset="" style="width: 15%;"> HEALTH CARE
+                
+            </a>
+            <ul id="main-menu">
+                <li id="title"><a href="Web_Suc_Khoe.html">Trang chủ</a></li>
+                <li id="services" class="has-child">
+                    <a href="#">Dịch vụ</a>
+                    <ul class="sub-menu">
+                        <li><a id="service4" href="face_form.html">Kiểm tra tâm lý</a></li>
+                        <li><a id="service2" href="Tuvantrilieutamly.html">Tư vấn trị liệu tâm lý</a></li>
+                        <li><a id="service3" href="khamtuxa.html">Khám từ xa</a></li>
+                        <li><a id="service1" href="Bacsirieng.html">Bác sĩ riêng</a></li>
+                        
+                    </ul>
+</li>
+            
+                <li id="expert">
+                 <a href="">Chuyên gia</a>
+                    <ul class="sub-menu">
+                        <li><a id="expert1"href="List.html">Danh sách</a></li>
+                        <li><a id="expert2"href="">Chuyên gia tư vấn trực tiếp</a></li>
+                         <li><a id="expert3"href="">Đặt hẹn</a></li>
+                    </ul>
+              </li>
+              <li id="community">
+                <a  href="">Cộng đồng</a>
+                    <ul class="sub-menu">
+                        <li><a id ="forum" href="">Diễn đàn</a></li>
+                        <li><a id ="support" href="">Hỗ trợ</a></li>
+                    </ul>
+                </li>
+              <li id="about_us">
+                <a href="">Về chúng tôi</a>
+                    <ul class="sub-menu">
+                        <li><a id="mission" href="">Sứ mệnh</a></li>
+                        <li><a id="vision"href="">Tầm nhìn phát triển</a></li>
+                    </ul>
+            </li>
+            <div class="login">
+                <!-- Biểu tượng địa cầu -->
+             
+        
+                <!-- Danh sách ngôn ngữ -->
+                <div class="language-dropdown">
+                   <a href=""></a>
+                </div>
+            </div>
+            <div class="language-switcher">
+                <!-- Biểu tượng địa cầu -->
+                <i class="fa-solid fa-earth-americas fa-xl" ></i>
+        
+                <!-- Danh sách ngôn ngữ -->
+                <div class="language-dropdown">
+                    <button onclick="changeLanguage('en')">English</button>
+                    <button onclick="changeLanguage('vi')">Tiếng Việt</button>
+                    <button onclick="changeLanguage('jp')">日本語</button>
+                </div>
+            </div>
+           
+             <li>
+                <div class="user-img-div" style="padding-left:20px">
+                    <img src="assets/img/user.png" class="img-thumbnail" />
+
+                    <div class="inner-text">
+                        <?php
+               
+                if(!empty($_SESSION['username']))
+                 {
+                     echo "Hello: ".$_SESSION['username']."<br>"."<a class ='nav-link' href= 'login_admin.php'>Logout</a>"."</p>";
+                 }
+                 else
+                  echo "<a class='nav-link' href='login_admin.php'>Login</a>";
+          
+                     ?>
+                    
+                </div>
+
+            </li>
+        </nav>
+        
+    </div>
