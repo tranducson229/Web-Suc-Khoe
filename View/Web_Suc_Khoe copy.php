@@ -597,67 +597,150 @@ function autoSlide() {
 autoSlide();
 
 </script>
+    <div class="services-section">
+        <div class="services-header">
+            <h2 id="remote">Dịch vụ</h2>
+            <p id="ND1">Tiếp cận đơn giản, điều trị hiệu quả, tiết kiệm</p>
+        </div>
+        <div class="services-menu">
+            <div class="service-card" data-video="../Media/original.mp4">
+                <div class="service-icon">
+                    <i class="fas fa-user-md"></i>
+                </div>
+                <div class="service-content">
+                    <h3 id="doctor">Bác sĩ riêng</h3>
+                    <p id="cnt">Cho người ta thương yêu</p>
+                </div>
+            </div>
+            <div class="service-card" data-video="../Media/original-2.mp4">
+                <div class="service-icon">
+                    <i class="fas fa-video"></i>
+                </div>
+                <div class="service-content">
+                    <h3 id="remote_2">Khám từ xa</h3>
+                    <p id="cnt_2">Khám gần khám xa, cốt là khám kỹ!</p>
+                </div>
+            </div>
+            <div class="service-card" data-video="../Media/original-3.mp4">
+                <div class="service-icon">
+                    <i class="fas fa-book"></i>
+                </div>
+                <div class="service-content">
+                    <h3 id="news">Edu Health</h3>
+                    <p id="cnt_3">Hỏi kiến thức, Healthtalk, Video trainings</p>
+                </div>
+            </div>
+            <div class="service-card" data-video="../Media/original-4.mp4">
+                <div class="service-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="service-content">
+                    <h3 id="know">HealthGPT</h3>
+                    <p id="cnt_4">Chat 24/7 với bác sĩ AI</p>
+                </div>
+            </div>
+        </div>
+        <div class="video-container">
+            <video id="videoPlayer" controls autoplay muted>
+                <source id="videoSource" src="../Media/original.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
 
+    <style>
+        .services-section {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #f9f9f9;
+        }
 
-   
-    <div class="text_sologan">
-        <h2 id="remote">Dịch vụ </h2>
-        <h5 id="ND1">Tiếp cận đơn giản, điều trị hiệu quả, tiết kiệm</h5>
-    </div>
-    <div class="menu">
-        <div class="menu-item" data-video="../Media/original.mp4">
-            <div class="title"><p id="doctor">Bác sĩ riêng</p></div>
-            <div class="subtitle"><p id="cnt">Cho người ta thương yêu</p></div>
-        </div>
-        <div class="menu-item" data-video="../Media/original-2.mp4">
-            <div class="title"><p id="remote_2">Khám từ xa</div></p>
-            <div class="subtitle"><p id="cnt_2">Khám gần khám xa, cốt là khám kỹ!</p></div>
-        </div>
-        <div class="menu-item" data-video="../Media/original-3.mp4">
-            <div class="title"><p id="news">Edu Health</p></div>
-            <div class="subtitle"><p id="cnt_3">Hỏi kiến thức, Healthtalk, Video trainings</p></div>
-        </div>
-        <div class="menu-item" data-video="../Media/original-4.mp4">
-            <div class="title"><p id="know">HealthGPT</p></div>
-            <div class="subtitle"><p id="cnt_4">Chat 24/7 với bác sĩ AI</p></div>
-        </div>
-    </div>
-    
-    <div class="video-container" style="margin:auto">
-        <video id="videoPlayer" controls autoplay muted>
-            <source id="videoSource" src="../Media/original.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
-    
+        .services-header h2 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .services-header p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        .services-menu {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .service-card {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: #6a11cb;
+            margin-bottom: 15px;
+        }
+
+        .service-content h3 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .service-content p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .video-container {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        #videoPlayer {
+            width: 80%;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+
     <script>
-        // Chọn tất cả các mục menu
-        const menuItems = document.querySelectorAll('.menu-item');
-    
-        // Thêm sự kiện click vào từng mục
-        menuItems.forEach(item => {
-            item.addEventListener('click', function() {
-                // Xóa lớp 'selected' từ tất cả các mục
-                menuItems.forEach(i => i.classList.remove('selected'));
-                
-                // Thêm lớp 'selected' vào mục được click
+        const serviceCards = document.querySelectorAll('.service-card');
+
+        serviceCards.forEach(card => {
+            card.addEventListener('click', function () {
+                serviceCards.forEach(c => c.classList.remove('selected'));
                 this.classList.add('selected');
-    
-                // Lấy video từ thuộc tính data-video
-                var videoSrc = this.getAttribute('data-video');
+
+                const videoSrc = this.getAttribute('data-video');
                 changeVideo(videoSrc);
             });
         });
-    
+
         function changeVideo(videoSrc) {
-            var videoPlayer = document.getElementById("videoPlayer");
-            var videoSource = document.getElementById("videoSource");
+            const videoPlayer = document.getElementById("videoPlayer");
+            const videoSource = document.getElementById("videoSource");
             videoSource.src = videoSrc;
-            videoPlayer.load(); // Nạp lại video mới
-            videoPlayer.play(); // Phát video ngay lập tức
+            videoPlayer.load();
+            videoPlayer.play();
         }
     </script>
-    
     
     <!-- <div class="video-container" style="margin:auto">
         <video controls autoplay muted>
