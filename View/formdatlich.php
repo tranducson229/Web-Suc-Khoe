@@ -50,7 +50,7 @@
 </head>
 <body>
   
-  <?php
+<?php
   // Kết nối database (giả sử dùng MySQLi)
   $conn = new mysqli("localhost", "root", "", "healthy");
   $conn->set_charset("utf8");
@@ -68,38 +68,75 @@
   }
   ?>
   <div class="container">
-    <h2>Đặt lịch khám với bác sĩ</h2>
-    <form>
-    <label>Chuyên khoa:</label>
-    <select>
-      <option>Da liễu</option>
-      <option>Nội khoa</option>
-      <option>Tâm lý</option>
-    </select>
+    <h2>Đặt lịch khám bác sĩ</h2>
+    <form action="" method="POST">
+      <label>Chuyên khoa:</label>
+      <select name="chuyenkhoa" required>
+        <option value="Da liễu">Da liễu</option>
+        <option value="Nội khoa">Nội khoa</option>
+        <option value="Tâm lý">Tâm lý</option>
+      </select>
 
-    <label>Bác sĩ:</label>
-    <select>
-      <?php echo $doctorOptions; ?>
-    </select>
+      <label>Bác sĩ:</label>
+      <select name="bacsi_id" required>
+        <?php echo $doctorOptions; ?>
+      </select>
 
-    <label>Ngày khám:</label>
-    <input type="date" />
+      <label>Ngày khám:</label>
+      <input type="date" name="ngay" required />
 
-    <label>Giờ khám:</label>
-    <input type="time" />
+      <label>Giờ khám:</label>
+      <input type="time" name="gio" required />
 
-    <label>Họ và tên:</label>
-    <input type="text" placeholder="Nhập họ tên..." />
+      <label>Họ và tên:</label>
+      <input type="text" name="hoten" placeholder="Nhập họ tên..." required />
 
-    <label>Email:</label>
-    <input type="email" placeholder="Nhập email..." />
+      <label>Email:</label>
+      <input type="email" name="email" placeholder="Nhập email..." required />
 
-    <label>Số điện thoại:</label>
-    <input type="tel" placeholder="Nhập số điện thoại..." />
+      <label>Số điện thoại:</label>
+      <input type="tel" name="sdt" placeholder="Nhập số điện thoại..." required />
 
-    <button type="submit">Đặt lịch</button>
+      <button type="submit" name="submit">Đặt lịch</button>
     </form>
   </div>
+
+  <?php
+  if (isset($_POST['submit'])) {
+      $chuyenkhoa = $_POST['chuyenkhoa'];
+      $bacsi = $_POST['bacsi_id'];
+      $ngay = $_POST['ngay'];
+      $gio = $_POST['gio'];
+      $hoten = $_POST['hoten'];
+      $email = $_POST['email'];
+      $sdt = $_POST['sdt'];
+
+      // Kết nối đến cơ sở dữ liệu
+      $conn = new mysqli('localhost', 'root', '', 'healthy');
+
+      // Kiểm tra kết nối
+      if ($conn->connect_error) {
+          die("Kết nối thất bại: " . $conn->connect_error);
+      }
+
+      // Câu lệnh SQL để chèn dữ liệu
+      $sql = "INSERT INTO lichkham (chuyenkhoa, bacsi_id, ngay, gio, hoten, email, sdt) 
+              VALUES ('$chuyenkhoa', '$bacsi', '$ngay', '$gio', '$hoten', '$email', '$sdt')";
+
+      if ($conn->query($sql) === TRUE) {
+          echo "<p style='text-align: center; color: green;'>Đặt lịch thành công!</p>";
+          header("Location: Web_Suc_Khoe copy.php"); // Chuyển hướng về trang chủ
+          exit();
+      } else {
+          echo "<p style='text-align: center; color: red;'>Lỗi: " . $conn->error . "</p>";
+      }
+
+      // Đóng kết nối
+      $conn->close();
+  }
+  ?>
+</body>
+
 
   
 </body>

@@ -517,7 +517,7 @@ session_start();
                 <ul class="sub-menu">
                     <li><a id="expert1"href="doctors.php">Danh sách</a></li>
                     <li><a id="expert2"href="">Chuyên gia tư vấn trực tiếp</a></li>
-                     <li><a id="expert3"href="">Đặt hẹn</a></li>
+                     <li><a id="expert3"href="formdatlich.php">Đặt hẹn</a></li>
                 </ul>
           </li>
           <li id="community">
