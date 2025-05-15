@@ -1,7 +1,7 @@
 <div id="wrapper" style="position: fixed; top: 0; left: 0; right: 0; z-index: 1000;">
     <div class="header">
        <nav class="container">
-        <a href="Web_Suc_Khoe.php" id="logo" style="text-decoration: none;color:#474746;">
+        <a href="Web_Suc_Khoe copy.php" id="logo" style="text-decoration: none;color:#474746;">
             <img src="../Media/logo.svg" alt="" srcset="" style="width: 15%;"> HEALTH CARE
         </a>
         <ul id="main-menu">
@@ -55,10 +55,30 @@
                 <button onclick="changeLanguage('jp')">日本語</button>
             </div>
         </div>
-        <div class="login" style="padding: 10px;">
-            <!-- Nút Đăng nhập -->
-            <a href="login.php" class="login-button">Đăng nhập</a>
-         </div>
+          <?php 
+                  if(isset($_SESSION['username'])){
+                      echo 
+                      '<li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Xin chào, ' . htmlspecialchars($_SESSION['username']) . '</a>
+                          <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="profile.php">Thông tin tài khoản</a></li>
+                              <li><a class="dropdown-item" href="change_inf.php">Cập nhật thông tin</a></li>
+                              <li><hr class="dropdown-divider"></li>
+                              <li><a class="dropdown-item" href="changepass.php">Đổi mật khẩu</a></li>
+                              <li><a class="dropdown-item" href="logout.php">Đăng xuất</a></li>
+                          </ul>
+                      </li>';
+                  } 
+                  else {
+                      echo 
+                      '<li class="nav-item">
+                          <a class="nav-link" href="login.php">Login</a>
+                      </li>';
+                  }
+
+                  ?>
+        
+         
     </nav>
 </div>
 </div>

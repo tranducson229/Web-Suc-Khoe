@@ -19,7 +19,7 @@
         window.location='../View/Web_Suc_khoe copy.php'</script>";
       }
       else echo "<script>alert('Đăng nhập không thành công')
-       window.location='../View/Web_Suc_khoe copy.php'</script>";
+       window.location='../View/Web_Suc_khoe.php'</script>";
     }
     if(isset($_POST['submit'])){
       session_start();
@@ -32,7 +32,7 @@
         window.location='../View/Web_Suc_khoe copy.php'</script>";
       }
       else echo "<script>alert('Đăng nhập không thành công')
-      window.location='../advance-admin/index copy.php'</script>";
+      window.location='../Web_Suc_Khoe.php'</script>";
       // else echo "<script>alert('MAKE')</script>";
     }
   ?>

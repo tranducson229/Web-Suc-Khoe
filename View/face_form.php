@@ -1,10 +1,14 @@
+<?php 
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bài Test Đánh Giá Lo Âu - Trầm Cảm - Stress</title>
-    <link rel="stylesheet" href="CSS/WebSucKhoe.css">
+    <link rel="stylesheet" href="../CSS/WebSucKhoe.css">
     <link rel="stylesheet" href="CSS/fontawesome-free-6.5.2-web/css/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -203,67 +207,20 @@
 }
 </style>
 <body>
-    
-    <div id="wrapper">
-        <div class="header">
-           <nav class="container">
-            <a href="Web_Suc_Khoe.html" id="logo" style="text-decoration: none;color:#474746;">
-              <img src="Media/logo.svg" alt="" srcset="" style="width: 15%;"> HEALTH CARE
-                
-            </a>
-            <ul id="main-menu">
-                <li id="title"><a href="#">Trang chủ</a></li>
-                <li id="services" class="has-child">
-                    <a href="#">Dịch vụ</a>
-                    <ul class="sub-menu">
-                        <li><a id="service1" href="face_form.html">Kiểm tra tâm lý</a></li>
-                        <li><a id="service2" href="Tuvantrilieutamly.html">Tư vấn trị liệu tâm lý</a></li>
-                        <li><a id="service3" href="khamtuxa.html">Khám từ xa</a></li>
-                        <li><a id="service4" href="Bacsirieng.html">Bác sĩ riêng</a></li>
-                        
-                    </ul>
-                </li>
-            
-                <li id="expert">
-                 <a href="">Chuyên gia</a>
-                    <ul class="sub-menu">
-                        <li><a id="expert1"href="List.html">Danh sách</a></li>
-                        <li><a id="expert2"href="">Chuyên gia tư vấn trực tiếp</a></li>
-                         <li><a id="expert3"href="">Đặt hẹn</a></li>
-                    </ul>
-              </li>
-              <li id="community">
-                <a  href="">Cộng đồng</a>
-                    <ul class="sub-menu">
-                        <li><a id ="forum" href="">Diễn đàn</a></li>
-                        <li><a id ="support" href="">Hỗ trợ</a></li>
-                    </ul>
-                </li>
-              <li id="about_us">
-                <a href="">Về chúng tôi</a>
-                    <ul class="sub-menu">
-                        <li><a id="mission" href="">Sứ mệnh</a></li>
-                        <li><a id="vision"href="">Tầm nhìn phát triển</a></li>
-                    </ul>
-            </li>
-            <div class="language-switcher">
-                <!-- Biểu tượng địa cầu -->
-                <i class="fa-solid fa-earth-americas fa-xl" ></i>
+    <?php
+        include("nav copy.php");
+        ?>
+    <?php
         
-                <!-- Danh sách ngôn ngữ -->
-                <div class="language-dropdown">
-                    <button onclick="changeLanguage('en')">English</button>
-                    <button onclick="changeLanguage('vi')">Tiếng Việt</button>
-                    <button onclick="changeLanguage('jp')">日本語</button>
-                </div>
-            </div>
-        </nav>
-        
-    </div>
+        if(!isset($_SESSION['username'])){
+            echo "<script>alert('Bạn chưa đăng nhập')
+            window.location='../View/login.php'</script>";
+        }
+    ?>
 
     <div class="container_1" >
         <header class="header_1">
-            <img src="Media/web-banner.png" alt="" srcset=""width="760px"height="200px">
+            <img src="../Media/web-banner.png" alt="" srcset=""width="760px"height="200px">
         </header>
         <div class="info">
             <div class="questions">13 Câu hỏi trắc nghiệm</div>
@@ -288,7 +245,7 @@
         
     </div>
     <footer class="text-center text-lg-start bg-body-tertiary text-muted">
-        <!-- Section: Social media -->
+        <!-- Section: Social ../Media -->
         <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
           <!-- Left -->
           <div class="me-5 d-none d-lg-block">
@@ -319,7 +276,7 @@
           </div>
           <!-- Right -->
         </section>
-        <!-- Section: Social media -->
+        <!-- Section: Social ../Media -->
       
         <!-- Section: Links  -->
         <section class="">
@@ -330,7 +287,7 @@
               <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                 <!-- Content -->
                 <h6 class="text-uppercase fw-bold mb-4">
-                  <img src="Media/logo.svg" alt="" srcset=""width="50px"> Health Care
+                  <img src="../Media/logo.svg" alt="" srcset=""width="50px"> Health Care
                 </h6>
                 <p id="mes">
                  <span style="color: rgb(11, 196, 134);"> Đối tác sức khỏe TIN CẬY</span><br>
