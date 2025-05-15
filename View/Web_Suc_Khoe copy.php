@@ -963,7 +963,79 @@ document.addEventListener("DOMContentLoaded", function() {
     </div>
 
     <style>
+<<<<<<< HEAD
         
+=======
+        .services-section {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #f9f9f9;
+        }
+
+        .services-header h2 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .services-header p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        .services-menu {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .service-card {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: #6a11cb;
+            margin-bottom: 15px;
+        }
+
+        .service-content h3 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .service-content p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .video-container {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        #videoPlayer {
+            width: 80%;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+>>>>>>> 1f570d2b52d482a12e3e7c7efdda81aa0b942b08
     </style>
 
     <script>
