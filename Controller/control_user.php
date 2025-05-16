@@ -29,7 +29,7 @@
       if($login==1){
         $_SESSION ['username']= $_POST['username'];
         echo "<script>alert('Đăng nhập thành công')
-        window.location='../View/Web_Suc_khoe copy.php'</script>";
+        window.location='../View/Web_Suc_khoe.php'</script>";
       }
       else echo "<script>alert('Đăng nhập không thành công')
       window.location='../Web_Suc_Khoe.php'</script>";

@@ -56,7 +56,7 @@ if (isset($_GET['id'])) {
         <li><strong>Mô tả:</strong> <?php echo $doctor['description']; ?></li>
     </ul>
 
-    <a href="add_to_cart.php?id=<?php echo $doctor['id']; ?>&Ten=<?php echo $doctor['Ten']; ?>&picture=<?php echo $doctor['Hinh']; ?>&price=0" class="btn">Đặt lịch hẹn</a>
+    <a href="formdatlich.php?id=<?php echo $doctor['id']; ?>&Ten=<?php echo $doctor['Ten']; ?>&picture=<?php echo $doctor['Hinh']; ?>&price=0" class="btn">Đặt lịch hẹn</a>
 </div>
 
 </body>
