@@ -1,67 +1,92 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <title>Lịch Khám Đã Đặt</title>
-    <style>
-        body { font-family: Arial, sans-serif; background: #f4f4f4; }
-        .container { width: 80%; margin: 40px auto; background: #fff; padding: 20px; border-radius: 8px; }
-        h2 { text-align: center; color: #2c3e50; }
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        th, td { padding: 12px; border: 1px solid #ccc; text-align: center; }
-        th { background: #3498db; color: #fff; }
-        tr:nth-child(even) { background: #f9f9f9; }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h2>Lịch Khám Đã Đặt</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>STT</th>
-                    <th>Họ Tên Bệnh Nhân</th>
-                    <th>Ngày Khám</th>
-                    <th>Giờ Khám</th>
-                    <th>Bác Sĩ</th>
-                    <th>Chuyên Khoa</th>
-                    <th>Trạng Thái</th>
-                </tr>
-            </thead>
-          <tbody>
 <?php
+session_start(); // Bắt đầu session
+
+// Kiểm tra xem người dùng đã đăng nhập hay chưa
+if (!isset($_SESSION['username'])) {
+    echo '<p>Bạn cần đăng nhập để xem lịch khám.</p>';
+    exit;
+}
+
 // Kết nối database
 $conn = new mysqli('localhost', 'root', '', 'healthy');
 $conn->set_charset("utf8");
 
-// Lấy dữ liệu lịch khám, join với bảng bác sĩ để lấy tên bác sĩ
+// Lấy ID người dùng từ session
+$user_id = $_SESSION['username'];
+
+// Lấy dữ liệu lịch khám của người dùng hiện tại
 $sql = "SELECT l.id, l.hoten, l.ngay AS ngaykham, l.gio AS giokham, d.Ten AS bacsi, l.chuyenkhoa
         FROM lichkham l
         LEFT JOIN doctors d ON l.bacsi_id = d.id
+        WHERE l.id = ?
         ORDER BY l.ngay DESC, l.gio DESC";
-$result = $conn->query($sql);
 
-if ($result && $result->num_rows > 0) {
-    $stt = 1;
-    while ($row = $result->fetch_assoc()) {
-        echo "<tr>
-            <td>{$stt}</td>
-            <td>{$row['hoten']}</td>
-            <td>{$row['ngaykham']}</td>
-            <td>{$row['giokham']}</td>
-            <td>{$row['bacsi']}</td>
-            <td>{$row['chuyenkhoa']}</td>
-            <td>Chờ xác nhận</td>
-        </tr>";
-        $stt++;
-    }
-} else {
-    echo '<tr><td colspan="7">Chưa có lịch khám nào được đặt.</td></tr>';
-}
-$conn->close();
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $user_id);
+$stmt->execute();
+$result = $stmt->get_result();
 ?>
-</tbody> 
-        </table>
-    </div>
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lịch Khám</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lịch Khám Của Bạn</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Họ Tên</th>
+                <th>Ngày Khám</th>
+                <th>Giờ Khám</th>
+                <th>Bác Sĩ</th>
+                <th>Chuyên Khoa</th>
+                <th>Trạng Thái</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            if ($result && $result->num_rows > 0) {
+                $stt = 1;
+                while ($row = $result->fetch_assoc()) {
+                    echo "<tr>
+                        <td>{$stt}</td>
+                        <td>{$row['hoten']}</td>
+                        <td>{$row['ngaykham']}</td>
+                        <td>{$row['giokham']}</td>
+                        <td>{$row['bacsi']}</td>
+                        <td>{$row['chuyenkhoa']}</td>
+                        <td>Chờ xác nhận</td>
+                    </tr>";
+                    $stt++;
+                }
+            } else {
+                echo '<tr><td colspan="7">Chưa có lịch khám nào được đặt.</td></tr>';
+            }
+            $stmt->close();
+            $conn->close();
+            ?>
+        </tbody>
+    </table>
 </body>
 </html>
