@@ -1,48 +1,34 @@
 <?php
-// /Web-Suc-Khoe/View/xulytrangthai.php
+$conn = new mysqli('localhost', 'root', '', 'healthy');
+$conn->set_charset('utf8');
 
-header('Content-Type: application/json');
+if ($conn->connect_error) {
+    die("Kết nối thất bại: " . $conn->connect_error);
+}
 
-// Giả sử bạn đã kết nối CSDL ở đây
-include '../Module/connect.php';
+if (isset($_GET['id']) && isset($_GET['action'])) {
+    $id = intval($_GET['id']);
+    $action = $_GET['action'];
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $id = isset($_POST['id']) ? intval($_POST['id']) : 0;
-    $trangthai = isset($_POST['trangthai']) ? $_POST['trangthai'] : '';
-
-    // Kiểm tra dữ liệu đầu vào
-    if ($id <= 0 || !in_array($trangthai, ['xacnhan', 'hoanthanh'])) {
-        echo json_encode([
-            'success' => false,
-            'message' => 'Dữ liệu không hợp lệ.'
-        ]);
-        exit;
+    // Kiểm tra và cập nhật trạng thái tương ứng
+    if ($action == 'xacnhan') {
+        $update = "UPDATE lichkham SET trangthai = 'xacnhan' WHERE id = $id";
+    } elseif ($action == 'hoanthanh') {
+        $update = "UPDATE lichkham SET trangthai = 'hoanthanh' WHERE id = $id";
     }
 
-    // Ví dụ cập nhật trạng thái trong bảng 'yeucau'
-    // $sql = "UPDATE yeucau SET trangthai = ? WHERE id = ?";
-    // $stmt = $conn->prepare($sql);
-    // $stmt->bind_param('si', $trangthai, $id);
-    // $result = $stmt->execute();
-
-    // Giả lập cập nhật thành công
-    $result = true;
-
-    if ($result) {
-        echo json_encode([
-            'success' => true,
-            'trangthai' => $trangthai
-        ]);
-    } else {
-        echo json_encode([
-            'success' => false,
-            'message' => 'Không thể cập nhật trạng thái.'
-        ]);
+    if (isset($update)) {
+        if ($conn->query($update) === TRUE) {
+            // Sau khi cập nhật thành công, quay lại dashboard
+            header("Location: appointment_management.php");
+            exit();
+        } else {
+            echo "Lỗi cập nhật: " . $conn->error;
+        }
     }
 } else {
-    echo json_encode([
-        'success' => false,
-        'message' => 'Phương thức không hợp lệ.'
-    ]);
+    echo "Thiếu thông tin.";
 }
+
+$conn->close();
 ?>
