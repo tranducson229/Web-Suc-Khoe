@@ -13,7 +13,7 @@ if(isset($_POST['txtsub'])){
             if($_POST['txtpass'] == $_POST['txtconfirm']){
                 $model->insert_account($_POST['txtname'], $_POST['txtmail'], $_POST['txtpass']);
                 echo"<script>alert('Đăng ký thành công!');
-                window.location.href = '../Guest/index.php';
+                window.location.href = '../View/Web_Suc_Khoe.php';
                 </script>";
             }
             else{

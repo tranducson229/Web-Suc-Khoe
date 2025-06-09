@@ -963,9 +963,9 @@ document.addEventListener("DOMContentLoaded", function() {
     </div>
 
     <style>
-<<<<<<< HEAD
+
         
-=======
+
         .services-section {
             text-align: center;
             padding: 50px 20px;
@@ -1030,12 +1030,12 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         #videoPlayer {
-            width: 80%;
-            max-width: 800px;
+            width: 50%;
+            max-width: 450px;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
->>>>>>> 1f570d2b52d482a12e3e7c7efdda81aa0b942b08
+
     </style>
 
     <script>
