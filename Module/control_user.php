@@ -64,12 +64,14 @@ class data_user
 class data_admin
 {
     public function admin_log ($username ,$password)
-    {
-        global $conn;
-        $sql = "select * from admin where username= '$username' and password = '$password'";
-        $run = mysqli_query($conn,$sql);
-       return $run;
-    }
+{
+    global $conn;
+    $sql = "SELECT * FROM admin WHERE username= '$username' AND password = '$password'";
+    $run = mysqli_query($conn, $sql);
+    $count = mysqli_num_rows($run);
+    return $count;  // Trả về 1 nếu đúng, 0 nếu sai
+}
+
     public function sl_id($aid){
         global $conn;
         $sql = "SELECT * FROM admin where uid = '$aid'";
