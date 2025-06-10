@@ -539,17 +539,34 @@ if (isset($_GET['id'])) {
             <li id="services" class="has-child">
                 <a href="#">Dịch vụ</a>
                 <ul class="sub-menu">
+                    <li><a id="service4" href="face_form.php">Kiểm tra tâm lý</a></li>
+                    <li><a id="service2" href="Tuvantrilieutamly.php">Tư vấn trị liệu tâm lý</a></li>
+                    <li><a id="service3" href="khamtuxa.php">Khám từ xa</a></li>
+                    <li><a id="service1" href="Bacsirieng.php">Bác sĩ riêng</a></li>
                 </ul>
             </li>
         
             <li id="expert">
              <a href="">Chuyên gia</a>
+                <ul class="sub-menu">
+                    <li><a id="expert1"href="doctors.php">Danh sách</a></li>
+                    <li><a id="expert2"href="">Chuyên gia tư vấn trực tiếp</a></li>
+                     <li><a id="expert3"href="">Đặt hẹn</a></li>
+                </ul>
           </li>
           <li id="community">
             <a  href="">Cộng đồng</a>
+                <ul class="sub-menu">
+                    <li><a id ="forum" href="">Diễn đàn</a></li>
+                    <li><a id ="support" href="">Hỗ trợ</a></li>
+                </ul>
             </li>
           <li id="about_us">
             <a href="">Về chúng tôi</a>
+                <ul class="sub-menu">
+                    <li><a id="mission" href="">Sứ mệnh</a></li>
+                    <li><a id="vision"href="">Tầm nhìn phát triển</a></li>
+                </ul>
         </li>
         <div class="login">
             <!-- Biểu tượng địa cầu -->
@@ -568,29 +585,28 @@ if (isset($_GET['id'])) {
                 <button onclick="changeLanguage('jp')">日本語</button>
             </div>
         </div>
-          
-              <?php 
-              if(isset($_SESSION['username'])){
-                  echo 
-                  '<li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Xin chào, ' . htmlspecialchars($_SESSION['username']) . '</a>
-                      <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="viewlichkham.php">Thông tin lịch khám</a></li>
-                          <li><a class="dropdown-item" href="change_inf.php">Cập nhật thông tin</a></li>
-                          <li><hr class="dropdown-divider"></li>
-                          <li><a class="dropdown-item" href="changepass.php">Đổi mật khẩu</a></li>
-                          <li><a class="dropdown-item" href="logout.php">Đăng xuất</a></li>
-                      </ul>
-                  </li>';
-              } 
-              else {
-                  echo 
-                  '<li class="nav-item">
-                      <a class="nav-link" href="login.php">Login</a>
-                  </li>';
-              }
+          <?php 
+                  if(isset($_SESSION['username'])){
+                      echo 
+                      '<li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Xin chào, ' . htmlspecialchars($_SESSION['username']) . '</a>
+                          <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="viewlichkham.php">Thông tin lịch khám</a></li>
+                              <li><a class="dropdown-item" href="change_inf.php">Cập nhật thông tin</a></li>
+                              <li><hr class="dropdown-divider"></li>
+                              <li><a class="dropdown-item" href="changepass.php">Đổi mật khẩu</a></li>
+                              <li><a class="dropdown-item" href="logout.php">Đăng xuất</a></li>
+                          </ul>
+                      </li>';
+                  } 
+                  else {
+                      echo 
+                      '<li class="nav-item">
+                          <a class="nav-link" href="login.php">Login</a>
+                      </li>';
+                  }
 
-              ?>
+                  ?>
         
          
     </nav>
@@ -603,7 +619,7 @@ if (isset($_GET['id'])) {
     
     <ul>
         <li><strong>Chuyên khoa:</strong> <?php echo $doctor['specialty']; ?></li>
-        <li><strong>Kinh nghiệm:</strong> <?php echo $doctor['description']; ?> </li>
+        <li><strong>Kinh nghiệm:</strong> <?php echo $doctor['kinhnghiem']; ?> </li>
         <li><strong>Mô tả:</strong> <?php echo $doctor['description']; ?></li>
     </ul>
 

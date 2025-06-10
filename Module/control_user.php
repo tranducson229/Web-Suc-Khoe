@@ -66,13 +66,13 @@ class data_admin
     public function admin_log ($username ,$password)
     {
         global $conn;
-        $select = "select * from user where username= '$username' and password = '$password'";
-        $run = mysqli_query($conn,$select);
+        $sql = "select * from admin where username= '$username' and password = '$password'";
+        $run = mysqli_query($conn,$sql);
        return $run;
     }
-    public function sl_id($id){
+    public function sl_id($aid){
         global $conn;
-        $sql = "SELECT * FROM user where uid = '$id'";
+        $sql = "SELECT * FROM admin where uid = '$aid'";
         $run = mysqli_query($conn, $sql);
         return $run;
     }
