@@ -558,7 +558,7 @@ session_start();
                           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Xin chào, ' . htmlspecialchars($_SESSION['username']) . '</a>
                           <ul class="dropdown-menu">
                               <li><a class="dropdown-item" href="viewlichkham.php">Thông tin lịch khám</a></li>
-                              <li><a class="dropdown-item" href="change_inf.php">Cập nhật thông tin</a></li>
+                              <li><a class="dropdown-item" href="lich_su_khao_sat.php">Lịch sử test</a></li>
                               <li><hr class="dropdown-divider"></li>
                               <li><a class="dropdown-item" href="changepass.php">Đổi mật khẩu</a></li>
                               <li><a class="dropdown-item" href="logout.php">Đăng xuất</a></li>

@@ -649,6 +649,10 @@ if ($conn->connect_error) {
                 <h2>Quản lý lịch khám</h2>
                 <a href="appointment_management.php">Đi đến quản lý lịch khám</a>
             </div>
+              <div class="dashboard-option">
+                <h2>Quản lý bài test người dùng</h2>
+                <a href="admin_lich_su_khao_sat.php">Đi đến quản lý bài test</a>
+            </div>
         </div>
     </div>
 </body>
