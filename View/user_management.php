@@ -120,27 +120,67 @@ $result_appointments = $conn->query($sql_appointments);
         <a href="admin_index.php" class="back-home">← Quay về trang chủ</a>
         <h1>Quản trị viên - Trang tổng quan</h1>
 
+        <?php
+        // Xử lý xóa người dùng
+        if (isset($_GET['delete_uid'])) {
+            $delete_uid = intval($_GET['delete_uid']);
+            if ($delete_uid > 0) {
+                $conn->query("DELETE FROM user WHERE uid = $delete_uid");
+                // Sau khi xóa, load lại trang để cập nhật danh sách
+                header("Location: " . strtok($_SERVER["REQUEST_URI"], '?'));
+                exit;
+            }
+        }
+
+        // Xử lý phân quyền (ví dụ: cập nhật cột 'role')
+        if (isset($_POST['set_role_uid']) && isset($_POST['role'])) {
+            $set_role_uid = intval($_POST['set_role_uid']);
+            $role = $conn->real_escape_string($_POST['role']);
+            $conn->query("UPDATE user SET role = '$role' WHERE uid = $set_role_uid");
+            header("Location: " . $_SERVER["REQUEST_URI"]);
+            exit;
+        }
+        ?>
+
         <h2>Danh sách người dùng</h2>
         <table>
             <tr>
                 <th>ID</th>
                 <th>Tên đăng nhập</th>
                 <th>Email</th>
+                <th>Phân quyền</th>
+                <th>Hành động</th>
             </tr>
+            <?php
+            // Lấy lại danh sách người dùng sau khi thao tác
+            $result_users = $conn->query("SELECT uid, username, email, role FROM user");
+            ?>
             <?php if ($result_users && $result_users->num_rows > 0): ?>
                 <?php while($row = $result_users->fetch_assoc()): ?>
                     <tr>
                         <td><?php echo htmlspecialchars($row['uid']); ?></td>
                         <td><?php echo htmlspecialchars($row['username']); ?></td>
                         <td><?php echo htmlspecialchars($row['email']); ?></td>
+                        <td>
+                            <form method="post" style="display:inline;">
+                                <input type="hidden" name="set_role_uid" value="<?php echo $row['uid']; ?>">
+                                <select name="role">
+                                    <option value="user" <?php if($row['role']=='user') echo 'selected'; ?>>User</option>
+                                    <option value="admin" <?php if($row['role']=='admin') echo 'selected'; ?>>Admin</option>
+                                </select>
+                                <button type="submit" class="btn-xuly">Lưu</button>
+                            </form>
+                        </td>
+                        <td>
+                            <a href="?delete_uid=<?php echo $row['uid']; ?>" class="btn-xuly" onclick="return confirm('Bạn có chắc muốn xóa người dùng này?');">Xóa</a>
+                        </td>
                     </tr>
                 <?php endwhile; ?>
             <?php else: ?>
-                <tr><td colspan="3">Không có người dùng nào.</td></tr>
+                <tr><td colspan="5">Không có người dùng nào.</td></tr>
             <?php endif; ?>
         </table>
-
-       
+    </div>
 </body>
 </html>
 <?php

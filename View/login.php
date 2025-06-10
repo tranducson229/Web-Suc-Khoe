@@ -36,7 +36,7 @@
             <a href="#"><img src="../Media/github.png" alt="github" /></a>
             <a href="#"><img src="../Media/facebook.png" alt="facebook" /></a>
           </div>
-          <p>Don't have an account yet? <a href="#">Sign up</a></p>
+          <p>Don't have an account yet? <a href="register.php">Sign up</a></p>
         </div>
         <div id="quaylai">
           <a href="gioithieu.html">Get back</a>

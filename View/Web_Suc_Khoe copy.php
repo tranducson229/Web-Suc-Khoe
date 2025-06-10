@@ -188,30 +188,25 @@ session_start();
     font-size: 16px;
     text-align: center;
 }
-
 .login-button:hover {
     background: linear-gradient(135deg, #2575fc, #92d67d); 
     box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3); 
     transform: scale(1.05); 
 }
-
 .services-section {
             text-align: center;
             padding: 50px 20px;
             background-color: #f9f9f9;
         }
-
         .services-header h2 {
             font-size: 2.5rem;
             color: #333;
             margin-bottom: 10px;
         }
-
         .services-header p {
             font-size: 1.2rem;
             color: #666;
         }
-
         .services-menu {
             display: flex;
             justify-content: center;
@@ -219,7 +214,6 @@ session_start();
             gap: 20px;
             margin-top: 30px;
         }
-
         .service-card {
             background: #fff;
             border-radius: 10px;
@@ -230,34 +224,28 @@ session_start();
             cursor: pointer;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
         .service-card:hover {
             transform: scale(1.05);
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
         }
-
         .service-icon {
             font-size: 3rem;
             color: #6a11cb;
             margin-bottom: 15px;
         }
-
         .service-content h3 {
             font-size: 1.5rem;
             color: #333;
             margin-bottom: 10px;
         }
-
         .service-content p {
             font-size: 1rem;
             color: #666;
         }
-
         .video-container {
             margin-top: 40px;
             text-align: center;
         }
-
         #videoPlayer {
             width: 50%;
             max-width: 350px;

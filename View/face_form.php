@@ -240,7 +240,7 @@ session_start();
             <p>Kết quả bài test này chỉ mang tính chất tham khảo, không có giá trị thay thế chẩn đoán y khoa bởi chuyên gia tâm lý/bác sĩ tâm thần.</p>
         </section>
         <div class="Form">
-            <a href="form_khao_sat_tam_ly.html">Start</a>
+            <a href="form_khao_sat_tam_ly.php">Start</a>
         </div>
         
     </div>
