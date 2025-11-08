@@ -749,18 +749,6 @@ document.addEventListener("DOMContentLoaded", function() {
             font-size: 1rem;
             color: #666;
         }
-
-        .video-container {
-            margin-top: 40px;
-            text-align: center;
-        }
-
-        #videoPlayer {
-            width: 80%;
-            max-width: 800px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
     </style>
 
     <script>

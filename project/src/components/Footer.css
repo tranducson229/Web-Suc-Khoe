@@ -1,0 +1,37 @@
+/* src/components/Footer.css */
+
+.footer-section {
+  /* Class bg-body-tertiary của Bootstrap đã set màu nền xám nhạt */
+  /* Chúng ta chỉ cần thêm padding */
+  padding-top: 1px; /* Chỉ để kích hoạt viền trên */
+}
+
+.footer-section .text-reset {
+  text-decoration: none; /* Bỏ gạch chân link */
+}
+
+.footer-section .social-icons a:hover {
+  color: #337ab7 !important; /* Đổi màu khi hover icon */
+}
+
+.footer-section .contact-info p {
+  display: flex;
+  align-items: flex-start; /* Căn icon và text lên đầu */
+}
+
+.footer-section .contact-info .me-3 {
+  margin-right: 1rem !important;
+  padding-top: 5px; /* Căn icon với dòng text */
+  min-width: 20px; /* Đảm bảo icon thẳng hàng */
+}
+
+.copyright-bar {
+  background-color: rgba(0, 0, 0, 0.05); /* Màu nền cho copyright */
+}
+
+/* Căn logo và text trong footer */
+.footer-section h6 img {
+  width: 40px;
+  margin-right: 8px; /* Khoảng cách logo và text */
+  vertical-align: middle; /* Căn logo với text */
+}

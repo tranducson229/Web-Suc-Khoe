@@ -1,0 +1,29 @@
+// src/firebaseConfig.js
+
+import { initializeApp } from "firebase/app";
+// 1. IMPORT "getAuth" TỪ FIREBASE AUTH
+import { getAuth } from "firebase/auth";
+
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Config của bạn (đã đúng)
+const firebaseConfig = {
+  apiKey: "AIzaSyC9gicwFgOve0r9RilQVi_YtGfi3Ph9GfU",
+  authDomain: "project-535c6.firebaseapp.com",
+  projectId: "project-535c6",
+  storageBucket: "project-535c6.firebasestorage.app",
+  messagingSenderId: "890631919643",
+  appId: "1:890631919643:web:de12fd43d3a24e4fa500be",
+  measurementId: "G-6FP2QX6FLB"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+// 2. KHỞI TẠO AUTH VÀ EXPORT NÓ RA NGOÀI
+export const auth = getAuth(app);
+
+// (Bạn không cần getAnalytics cho việc đăng nhập, nhưng giữ lại cũng không sao)
+// import { getAnalytics } from "firebase/analytics";
+// const analytics = getAnalytics(app);

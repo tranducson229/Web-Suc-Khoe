@@ -1,0 +1,101 @@
+/* src/components/Services.css */
+
+.services-section {
+  /* 1. XÓA NỀN VÀ PADDING GÂY RA "Ô BAO QUANH" */
+  /* background-color: #f9f9f9; <-- ĐÃ XÓA */
+  /* padding: 50px 20px; <-- ĐÃ XÓA */
+
+  /* Thêm padding trên/dưới để tạo khoảng cách */
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  /* 2. DÙNG FLEXBOX ĐỂ "ÉP" CÁC CON VÀO GIỮA */
+  display: flex;
+  flex-direction: column; /* Xếp các con theo chiều dọc */
+  align-items: center; /* Căn giữa tất cả các con theo chiều ngang */
+}
+
+/* Header vẫn căn giữa text */
+.services-header {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 30px; /* Thêm margin cho đẹp */
+}
+
+.services-header h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.services-header p {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+/* Menu card (đã được căn giữa bởi "align-items: center" của cha) */
+.services-menu {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.service-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.service-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.service-card.selected {
+  border-color: #6a11cb;
+  box-shadow: 0 6px 15px rgba(106, 17, 203, 0.3);
+  transform: scale(1.05);
+}
+
+.service-icon {
+  font-size: 3rem;
+  color: #6a11cb;
+  margin-bottom: 15px;
+}
+
+.service-content h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.service-content p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Video Container (đã được căn giữa bởi "align-items: center" của cha) */
+.video-container {
+  margin-top: 40px;
+  max-width: 800px; /* Giới hạn chiều rộng video */
+  width: 100%; /* Cho phép co giãn trên mobile */
+  
+  /* KHÔNG CẦN margin-left/right: auto nữa */
+  
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#videoPlayer {
+  width: 100%;
+  height: auto;
+  display: block;
+}

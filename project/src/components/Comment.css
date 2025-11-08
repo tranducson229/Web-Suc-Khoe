@@ -1,0 +1,163 @@
+/* src/components/Testimonials.css */
+
+#comment {
+  background: #f5f7fa;
+  padding: 50px 0 30px 0;
+  overflow: hidden; /* Quan trọng để cuộn ngang không làm tràn */
+}
+
+#comment h2 {
+  font-size: 2.2rem;
+  color: #2575fc;
+  font-weight: bold;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center; /* Đảm bảo tiêu đề ở giữa */
+}
+
+#comment-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* overflow: hidden; <-- Dòng này sẽ được chuyển vào .list-comment-wrapper */
+  height: 380px;
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 6px 32px rgba(81, 233, 64, 0.08), 0 1.5px 6px rgba(37, 117, 252, 0.06);
+  position: relative;
+}
+
+.prev_1, .next_1 {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eaf0fb;
+  border-radius: 50%;
+  transition: background 0.2s;
+  margin: 0 10px;
+  box-shadow: 0 2px 8px rgba(37, 117, 252, 0.08);
+  z-index: 2;
+  cursor: pointer; /* Thêm cursor */
+}
+
+.prev_1:hover, .next_1:hover {
+  background: #2575fc;
+}
+
+.prev_1 img, .next_1 img {
+  width: 22px;
+  height: 22px;
+  filter: grayscale(0.5);
+  transition: filter 0.2s;
+  /* display: block; <-- Dòng này có thể từ App.css, không cần ở đây nữa */
+}
+
+.prev_1:hover img, .next_1:hover img {
+  filter: brightness(0) invert(1);
+}
+
+/* --- PHẦN SỬA ĐỂ CUỘN SLIDE VÀ ẨN CÁC SLIDE KHÁC --- */
+.list-comment-wrapper {
+  height: 100%; /* Chiếm toàn bộ chiều cao của comment-body */
+  width: 500px; /* Chiều rộng cố định cho vùng hiển thị slide */
+  min-width: 320px;
+  max-width: 500px;
+  overflow: hidden; /* RẤT QUAN TRỌNG: Ẩn các slide ngoài khung nhìn */
+}
+
+#list-comment {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%; /* Chiếm toàn bộ chiều rộng của wrapper */
+  height: 100%; /* Quan trọng: Mỗi item sẽ chiếm 100% chiều cao của list */
+  /* transition: transform 0.4s cubic-bezier(.4,2.08,.55,.44); */
+  /* Dùng transition mặc định của React là tốt nhất */
+  transition: transform 0.5s ease-in-out; 
+}
+/* --- HẾT PHẦN SỬA --- */
+
+#list-comment .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0;
+  height: 100%; /* Mỗi item chiếm 100% chiều cao của #list-comment */
+  padding: 30px 30px 20px 30px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.avatar img {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border: 3px solid #2575fc;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 8px rgba(37, 117, 252, 0.12);
+}
+
+/* --- SỬA CHỖ NÀY ĐỂ SAO XẾP HÀNG NGANG --- */
+.stars {
+  display: flex; /* THÊM DÒNG NÀY */
+  justify-content: center; /* THÊM DÒNG NÀY */
+  margin-bottom: 12px;
+}
+
+.stars img {
+  display: inline-block; /* THÊM DÒNG NÀY */
+  width: 22px;
+  height: 22px;
+  margin: 0 1.5px;
+  filter: drop-shadow(0 1px 2px rgba(81,233,64,0.15));
+}
+/* --- HẾT SỬA CHỖ NÀY --- */
+
+.name {
+  font-weight: 600;
+  color: #2575fc;
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+.text-cmt p {
+  color: #444;
+  font-size: 1.08rem;
+  font-style: italic;
+  background: #f5f7fa;
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin: 0;
+  box-shadow: 0 1px 4px rgba(37, 117, 252, 0.04);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  #comment-body {
+    flex-direction: column; /* Xếp dọc các mũi tên và comment box */
+    height: auto; /* Cho phép chiều cao tự động co giãn */
+    max-width: 98vw;
+    padding: 20px 0; /* Thêm padding cho comment-body trên mobile */
+  }
+  .list-comment-wrapper {
+    width: 90vw;
+    min-width: 0;
+    max-width: 98vw;
+    height: 380px; /* Giữ chiều cao cố định cho slide trên mobile */
+  }
+  #list-comment .item {
+    padding: 20px 5vw 10px 5vw;
+  }
+  .prev_1,
+  .next_1 {
+    margin: 10px 0;
+  }
+}
